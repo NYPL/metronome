@@ -1,3 +1,5 @@
-# Headline
+# Install
 
-> An awesome project.
+`npm i docsify-cli -g`
+
+`docsify serve ./nypl-design-system-docs`
