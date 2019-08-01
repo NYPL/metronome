@@ -10,6 +10,12 @@ The follow is a list of things we'd like this documentation site to accomplish o
 - Site should be searchable
 - Site should be editable
 - Site should have a table of all of the components with their statuses (in-progress, in-review, complete), and the implementation libraries' statuses (Twig template, React component, ERB template)
+
+#### Header
+| UX       | Accessibility | DT: Twig | DT: React   | DT: ERB   |
+|----------|---------------|----------|-------------|-----------|
+| Complete | Complete      | Complete | Out of Date | Not Built |
+|          |               |          |             |           |
 - Site should have authorship data, last revision date(s) on files, and descriptions of changes made (such as a git commit)
 - Site should have roles so that certain users can lock components and their documentation to prevent edits unless author has a certain role
 - In-progress components should have a working draft that is still visible on the site
@@ -18,6 +24,10 @@ The follow is a list of things we'd like this documentation site to accomplish o
 - Components should display the relationships of where they are used and link back to their lower-level functional requirements (e.g., "Event Status Bar" uses "Button", link to the button component to see its requirements)
 - Components should have: link to Figma instance for designers, IA (functional specs and accessibility), look & feel, their status, a built and interactive display of the component in-action, and the numbered documentation that Ellen created listing functional requirements.
 - We should be able to number the components on the page in our documentation site to write documentation for them. This should automatically add the number to that component in Figma.
+
+| ID | Template ID | Module ID | Order # | Document Field |
+|----|-------------|-----------|---------|----------------|
+|    |             |           |         |                |
 
 Ideation/Product >> UX/Prototype >> Design Technology (templates, React components) >> Version Update >> Committing back to the library
 
