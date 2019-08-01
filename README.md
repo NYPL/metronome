@@ -33,3 +33,9 @@ Ideation/Product >> UX/Prototype >> Design Technology (templates, React componen
 
 ## Open Issues
 - How do we handle JavaScript?
+
+## Figma Plugins
+- [Interplay](https://www.figma.com/c/plugin/736368164448889527/Interplay): Interplay connects with your design system code repository to let you access and use your design system code components right within Figma. I don't know if this would be useful.
+- [Google Sheets Sync](https://www.figma.com/c/plugin/735770583268406934/Google-sheets-sync): Sync content from Google Sheets directly into your Figma file. This might be helpful for updating names.
+- [Focus Orderer](https://www.figma.com/c/plugin/731310036968334777/Focus-Orderer): Quickly annotate your designs’ focus / tab order flow. Intriguing for Willa, potentially.
+- [Layer Names Transform](https://www.figma.com/c/plugin/734746297902924375/Layer-Names-Transfom): This plugin will help you to quickly transform the names of your layers.
