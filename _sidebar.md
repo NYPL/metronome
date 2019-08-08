@@ -1,4 +1,8 @@
 * [Home](/)
+* [Templates](./404.md)
+  * [T1 article 9 3](03-templates/article/T1-article-9-3.md)
+  * [T12 community showcase](03-templates/T-12-community-showcase.md)
+  * [layout](03-templates/article/layout.md)
 * [Buttons](00-atoms/buttons/00_button.md)
   * [AB 001 Button Filled](00-atoms/buttons/AB-001-button-filled.md)
   * [AB 002 Button Filled~with Icon.md](00-atoms/buttons/AB-002-button-filled~with-icon.md)
@@ -13,7 +17,7 @@
   * [AB 011 Button round~with minus](./00-atoms/buttons/AB-011-button-round~with-minus.md)
   * [AB 012 button related link](00-atoms/buttons/AB-012-button-related-link.md)
   * [AB 013 button disabled](00-atoms/buttons/AB-013-button-disabled.md)
-* Images
+* [Images](./404.md)
   * [AI 001 image full bleed](00-atoms/images/AI-001-image-full-bleed.md)
   * [AI 002 image 3x4](00-atoms/images/AI-002-image-3x4.md)
   * [AI 003 image 4x3](00-atoms/images/AI-003-image-4x3.md)
@@ -21,7 +25,7 @@
   * [AI 005 image 1x1](00-atoms/images/AI-005-image-1x1.md)
   * [AI 006 image 16x9](00-atoms/images/AI-006-image-16x9.md)
   * [AI 007 circle mask 1x1](00-atoms/images/AI-007-circle-mask-1x1.md)
-* Logos
+* [Logos](./404.md)
   * [AL 001 lion logo](00-atoms/logos/AL-001-lion-logo.md)
   * [AL 002 nypl library icon set](00-atoms/logos/AL-002-nypl-library-icon-set.md)
 * [Icons](00-atoms/icons/00_icon.md)
@@ -110,7 +114,7 @@
   * [MB 001 media block~no image vertical](01-molecules/media-blocks/MB-001-media-block~no-image-vertical.md)
   * [MB 001 media block~no image](01-molecules/media-blocks/MB-001-media-block~no-image.md)
   * [MB 001 media block~vertical](01-molecules/media-blocks/MB-001-media-block~vertical.md)
-* Dates and Events
+* [Dates and Events](./404.md)
   [MT DE 001 date tile single date](01-molecules/dates-and-events/MT-DE-001-date-tile-single-date.md)
   * [00_Dates and events](01-molecules/dates-and-events/00_Dates-and-events.md)
   * [MT DE 002 date tile multiple dates](01-molecules/dates-and-events/MT-DE-002-date-tile-multiple-dates.md)
@@ -128,26 +132,26 @@
 * [Messaging](01-molecules/messaging/00_messaging.md)
 * [Media](01-molecules/media/00_media.md)
   * [MM 001 figure with caption](01-molecules/media/MM-001-figure-with-caption.md)
-* Event Sections
+* [Event Sections](./404.md)
   * [OSE 001 event section module](02-organisms/event-sections/OSE-001-event-section-module.md)
   * [OSE 001 event section module~horizontal](02-organisms/event-sections/OSE-001-event-section-module~horizontal.md)
   * [OSE 001 event section module~no image](02-organisms/event-sections/OSE-001-event-section-module~no-image.md)
-* About Shop
+* [About Shop](./404.md)
   * [OSAS 001 about section](02-organisms/about-shop/OSAS-001-about-section.md)
   * [OSAS 002 shop section module](02-organisms/about-shop/OSAS-002-shop-section-module.md)
-* Video
+* [Video](./404.md)
   * [OSV 001 video](02-organisms/video/OSV-001-video.md)
 * [Accordions](02-organisms/accordions/00_accordion.md)
   * [OTA 001 accordion panel~closed](02-organisms/accordions/OTA-001-accordion-panel~closed.md)
   * [OTA 001 accordion panel~open](02-organisms/accordions/OTA-001-accordion-panel~open.md)
   * [OTA 002 accordion set](02-organisms/accordions/OTA-002-accordion-set.md)
   * [OTA 002 accordion set~learn more](02-organisms/accordions/OTA-002-accordion-set~learn-more.md)
-* Header
+* [Header](./404.md)
   * [OSH 001 hero header](02-organisms/hero-header/OSH-001-hero-header.md)
   * [OSH 001 hero header~no description](02-organisms/hero-header/OSH-001-hero-header~no-description.md)
   * [OSH 002 event series header small](02-organisms/hero-header/OSH-002-event-series-header-small.md)
   * [OSH 002 event series header small~no description](02-organisms/hero-header/OSH-002-event-series-header-small~no-description.md)
-* Lists
+* [Lists](./404.md)
   * [OL 001 related content link list](02-organisms/lists/OL-001-related-content-link-list.md)
 * Event Address Actions
   * [OSAE 001 audio tour](02-organisms/event-address-actions/OSAE-001-audio-tour.md)
@@ -155,18 +159,15 @@
   * [OSAE 003 event address bar and actions~mini](02-organisms/event-address-actions/OSAE-003-event-address-bar-and-actions~mini.md)
   * [OSAE 003 event address bar and actions~no event](02-organisms/event-address-actions/OSAE-003-event-address-bar-and-actions~no-event.md)
   * [OSAE 003 event address bar and actions~visit information](02-organisms/event-address-actions/OSAE-003-event-address-bar-and-actions~visit-information.md)
-* Booklists
+* [Booklists](./404.md)
   * [OSB 001 related reading titles and detail](02-organisms/booklists/OSB-001-related-reading-titles-and-detail.md)
   * [OSB 001 related reading titles and detail~card with icon](02-organisms/booklists/OSB-001-related-reading-titles-and-detail~card-with-icon.md)
   * [OSB 001 related reading titles and detail~card with intro](02-organisms/booklists/OSB-001-related-reading-titles-and-detail~card-with-intro.md)
   * [OSB 001 related reading titles and detail~card](02-organisms/booklists/OSB-001-related-reading-titles-and-detail~card.md)
-* Image Gallery
+* [Image Gallery](./404.md)
   * [OSIG 001 image gallery](02-organisms/image-gallery/OSIG-001-image-gallery.md)
-* Global Elements
+* [Global Elements](./404.md)
   * [OG 001 header](02-organisms/global/OG-001-header.md)
   * [OG 001 header~scrolled](02-organisms/global/OG-001-header~scrolled.md)
   * [OG 002 footer](02-organisms/global/OG-002-footer.md)
   * [OG 003 newsletter promo](02-organisms/global/OG-003-newsletter-promo.md)
-* Templates
-  * [T1 article 9 3](03-templates/article/T1-article-9-3.md)
-  * [layout](03-templates/article/layout.md)
