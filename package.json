@@ -1,0 +1,28 @@
+{
+  "name": "nypl-design-system-docs",
+  "version": "0.0.0",
+  "description": "A place to house our documentation for UX requirements and functionality",
+  "main": "index.html",
+  "dependencies": {
+    "docsify-sidebar-collapse": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NYPL/nypl-design-system-docs.git"
+  },
+  "keywords": [
+    "design",
+    "system",
+    "docs"
+  ],
+  "author": "Helen V. Holmes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NYPL/nypl-design-system-docs/issues"
+  },
+  "homepage": "https://github.com/NYPL/nypl-design-system-docs#readme"
+}
