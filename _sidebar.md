@@ -1,5 +1,5 @@
 * [Home](/)
-* [Templates](./404.md)
+* [Templates](03-templates/templates.md)
   * [T1 article 9 3](03-templates/article/T1-article-9-3.md)
   * [T12 community showcase](03-templates/T-12-community-showcase.md)
   * [layout](03-templates/article/layout.md)
@@ -140,7 +140,7 @@
   * [OSH 002 event series header small~no description](02-organisms/hero-header/OSH-002-event-series-header-small~no-description.md)
 * [Lists](./404.md)
   * [OL 001 related content link list](02-organisms/lists/OL-001-related-content-link-list.md)
-* Event Address Actions
+* [Event Address Actions](./404.md)
   * [OSAE 001 audio tour](02-organisms/event-address-actions/OSAE-001-audio-tour.md)
   * [OSAE 002 event address bar and actions](02-organisms/event-address-actions/OSAE-002-event-address-bar-and-actions.md)
   * [OSAE 003 event address bar and actions~mini](02-organisms/event-address-actions/OSAE-003-event-address-bar-and-actions~mini.md)
