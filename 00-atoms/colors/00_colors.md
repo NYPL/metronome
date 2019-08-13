@@ -1,4 +1,5 @@
 # Colors
+[link to patternlab](https://nypl-design-system.netlify.com/?p=viewall-atoms-colors)
 
 ## Design
 - Brand Colors
