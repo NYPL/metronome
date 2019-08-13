@@ -1,8 +1,17 @@
----
-state: inprogress
----
+# Typography
 
-Accessibility & Functional Requirements
+## Design
+The fonts that are used on the site.
+- Primary Font
+Secondary Font
+
+Headings
+Horizontal Rule
+Inline Elements
+Paragraph
+Preformatted Text
+
+## Accessibility & Functional Requirements
 AT-001
 - Is h1
 - Is only used in semantically correct order
@@ -17,7 +26,6 @@ AT-003
 - Is only used in semantically correct order
 
 AT-004 - DRAFT / INCOMPLETE
-- 
 
 AT-005
 - is <label>
