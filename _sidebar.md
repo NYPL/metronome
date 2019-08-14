@@ -2,7 +2,6 @@
 * [Templates](03-templates/templates.md)
   * [T1 article 9 3](03-templates/article/T1-article-9-3.md)
   * [T12 community showcase](03-templates/T-12-community-showcase.md)
-  * [Testing](03-templates/Testing.md)
   * [layout](03-templates/article/layout.md)
 * [Buttons](00-atoms/buttons/00_button.md)
 * [Images](./404.md)
