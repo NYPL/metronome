@@ -6,9 +6,10 @@ In order to contribute to this documentation you must first have a Github accoun
 1. [Where Our Documentation Lives](#where-our-documentation-lives)
 2. [Editing Existing Documentation](#editing-existing-documentation)
 3. [Creating New Documentation](#creating-new-documentation)
-4. [Learning Markdown](#learning-markdown)
-5. [Programs for Authoring Markdown](#programs-for-authoring-markdown)
-6. [Contributing for Developers](#contributing-for-developers)
+4. [Adding References to Figma Frames](#adding-references-to-figma-frames)
+5. [Learning Markdown](#learning-markdown)
+6. [Programs for Authoring Markdown](#programs-for-authoring-markdown)
+7. [Contributing for Developers](#contributing-for-developers)
 
 ## Where Our Documentation Lives
 Our documentation is hosted on Github Pages at [nypl.github.io/nypl-design-system-docs](https://nypl.github.io/nypl-design-system-docs/#/), which is linked to at the top level of this repo at [github.com/NYPL/nypl-design-system-docs](https://github.com/NYPL/nypl-design-system-docs). This site is built using a library called [Docsify](https://docsify.js.org), which takes a collection of markdown files and compiles them into a static site. We host this static site on Github Pages, which is free. Docsify is also free. We use Github's built in tools to edit these markdown files which then are automatically compiled, building a new version of the site each time we hit save on a file.
@@ -40,7 +41,30 @@ Creating new documentation files is slightly more involved. Should you have issu
 
     [Github repo top level](https://github.com/NYPL/nypl-design-system-docs) > [00-atoms folder](https://github.com/NYPL/nypl-design-system-docs/tree/master/00-atoms) > [colors folder](https://github.com/NYPL/nypl-design-system-docs/tree/master/00-atoms/colors)
 
-    Within this folder, you 
+    Within this folder, hit the button "Create new file". Give it a sensible name, and then copy and paste your written documentation from the file on your computer into the text box within Github.
+
+4. Once you have added your documentation to the text frame, scroll to the button of the page and author a meaningful commit message. Afterwards, hit the green button labeled "Commit changes".
+5. While you have added a new page and that page now exists on the website, there is currently no way to navigate to it. To get to the page on the website we need to add a reference to the file to the sidebar. Navigate to the [top level](https://github.com/NYPL/nypl-design-system-docs) of our repository and navigate inside `_sidebar.md`, hitting the "Edit" pencil icon.
+6. Scroll to the relevant section for your new file. Building on the example above, I would navigate to the section of `_sidebar.md` that housed `00-atoms > colors`.
+7. Add a new line to this file where you would like the link to your file to go. Add a title for the link and the link to the markdown file. The template for this is like so:
+
+    `* [Template name](link/to/template.md)`
+
+    For our example above, we would do:
+
+    `* [Our color file name](00-atoms/colors/our-color-file-name.md)`
+
+    To properly nest our sidebar we use whitespace. _This means that the number of spaces you use is important._ For a top-level link, I would add no spaces to the left of the asterik. For a first level sublink, I would use two, for a second level sublink, I would use four, increasing by two for each level of nesting.
+
+    ```
+    * Level one
+      * Level two
+        * Level three
+    ```
+8. Scroll to the bottom of the page and author a meaningful commit, then hitting the green button that says "Commit changes."
+9. Navigate to the website. See your change to the sidebar by doing a hard refresh on the page (`Shift` + `Cmd` + `R` for Macs, `Shift` + `Ctrl` + `R` for Windows and Linux machines). Navigate to the link to ensure you have hooked everything up properly.
+
+## Adding References to Figma Frames
 
 Creating New File 
 steps : 
