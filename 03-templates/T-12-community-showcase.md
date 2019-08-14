@@ -30,9 +30,9 @@
 **Rules:**
 
 
-**Accessibility**
+**Accessibility:**
 
-**Source**
+**Source:**
 
 ### 4. AI-002: Image 3:4
 
