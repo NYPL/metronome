@@ -16,26 +16,6 @@ In order to contribute to this documentation you must first have a Github accoun
 ## Editing Existing Documentation
 
 ## Creating New Documentation
-
-## Learning Markdown
-Our documentation is written using a lightweight markup language called [Markdown](https://en.wikipedia.org/wiki/Markdown). The language uses different kinds of punctuation marks to tell the computer compiler how to format our files without us as authors having to learn and use HTML proper.
-
-In order to learn the syntax necessary for this project we recommend reviewing [Github's guide to Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
-
-## Programs for Authoring Markdown
-
-## Contributing for Developers
-
-Markdown File 101 
-
-```
-# h1
-## H2 
-### H3 
-**bold**
-_italic_
-```
-
 Creating New File 
 steps : 
 go to figma file > select frame > click on share > click on embed code 
@@ -46,4 +26,19 @@ steps:
 click file name  - nypl- design - system - docs 
 click on side.md file > click on edit > Insert new file to right location in the format -   `* [Testing](03-templates/Testing.md)`
 
+## Learning Markdown
+Our documentation is written using a lightweight markup language called [Markdown](https://en.wikipedia.org/wiki/Markdown). The language uses different kinds of punctuation marks to tell the computer compiler how to format our files without us as authors having to learn and use HTML proper.
 
+In order to learn the syntax necessary for this project we recommend reviewing [Github's guide to Mastering Markdown](https://guides.github.com/features/mastering-markdown/). Below is a cheatsheet of commonly needed formatting options:
+
+```
+# h1
+## h2
+### H3 
+**bold**
+_italic_
+```
+
+## Programs for Authoring Markdown
+
+## Contributing for Developers
