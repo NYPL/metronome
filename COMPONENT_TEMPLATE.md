@@ -1,5 +1,11 @@
 # Component Name
-Status: IA Not Started/IA In-Progress/IA Complete/Design those three statuses/DT three statuses | [Jira Ticket]()
+| UX Work       | Status        |
+|---------------|---------------|
+| IA            | Completed     |
+| Design        | In Progress   |
+| Design Tech   | Not Started   |
+
+Working Draft/ | [Jira Ticket]()
 
 Components have functional requirements—headline length is 80 characters, marked up with `<h1>`
 Pages/Templates have page rules. Headline length is 50 characters, source is x, rules for each module on the page
