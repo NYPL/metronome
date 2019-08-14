@@ -1,6 +1,6 @@
 # Contributing to this Documentation
 
-In order to contribute to this documentation you must first have a Github account which you can procure [here](https://github.com). If you are a core team member and would like contribution access, please contact [@helenvholmes](https://github.com/helenvholmes) or [@jackkim](https://github.com/jackkim9).
+In order to contribute to this documentation you must first have a Github account which you can procure [here](https://github.com). If you are a core team member and would like contribution access, please contact [@helenvholmes](https://github.com/helenvholmes) or [@jackkim9](https://github.com/jackkim9).
 
 ## Table of Contents
 1. [Where Our Documentation Lives](#where-our-documentation-lives)
@@ -22,7 +22,7 @@ Regardless of how you navigate to it, the following steps are how you edit and f
 2. This will take you to the edit mode. Make your desired changes in the file. If you are unfamiliar with markdown we have two sections that may be relevant to you: [Learning Markdown](#learning-markdown) | [Programs for Authoring Markdown](#programs-for-authoring-markdown)
 3. When you have completed authoring your changes, scroll to the bottom of the page. Under the subheader "Commit changes", add a meaningful commit message for the changes you have made. An example of a good commit is this one from Ellen:
 
-    `Adds subfield categories to 3. AT-001: Page Title"]()`
+    `Adds subfield categories to 3. AT-001: Page Title`
 
     An example of a poor commit message is this one:
 
