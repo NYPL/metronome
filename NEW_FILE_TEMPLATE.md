@@ -1,10 +1,13 @@
 # Component Name
 Status: IA Not Started/IA In-Progress/IA Complete/Design those three statuses/DT three statuses | [Jira Ticket]()
 
+Components have functional requirements—headline length is 80 characters, marked up with <h1> 
+Pages/Templates have page rules. Headline length is 50 characters, source is x, rules for each module on the page
+
 ```Figma embed for unannotated component should go here```
 
 ## Component Description
-A brief overview laong with some notes about when and where the component is used goes here.
+A brief overview along with some notes about when and where the component is used goes here.
 
 ```Figma embed for component with numeric annotations should go here```
 
@@ -15,4 +18,3 @@ Code snippets also belong in here.
 
 ## Open Issues
 Any known outstanding questions belong here.
-
