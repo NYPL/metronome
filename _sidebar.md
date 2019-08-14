@@ -1,5 +1,6 @@
 * [Home](/)
 * [Templates](03-templates/templates.md)
+  * [testing rename frame result ](03-templates/testing-rename-frame-result.md)
   * [rename frame ](03-templates/rename-frame.md)
   * [original name](03-templates/original-name.md)
   * [T1 article 9 3](03-templates/article/T1-article-9-3.md)
