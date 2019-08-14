@@ -16,5 +16,7 @@ Requirements for HTML structure and accessibility should go here. For templates,
 
 Code snippets also belong in here.
 
+## Data Model
+
 ## Open Issues
 Any known outstanding questions belong here.

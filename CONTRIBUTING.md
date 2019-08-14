@@ -32,6 +32,16 @@ Regardless of how you navigate to it, the following steps are how you edit and f
 5. Navigate to the website and the subpage that you have edited. See your new changes by doing a hard refresh on the page (`Shift` + `Cmd` + `R` for Macs, `Shift` + `Ctrl` + `R` for Windows and Linux machines).
 
 ## Creating New Documentation
+Creating new documentation files is slightly more involved. Should you have issues creating a file where you would like it to live, please reach out to [@helenvholmes](https://github.com/helenvholmes).
+
+1. First determine whether you are writing the documentation for a component or a template/page. Components include `atoms`, `molecules`, and `organisms` within our design library. A candidate for a template would be `community showcase`. Depending upon your answer to this question, use `COMPONENT_TEMPLATE.md` or `TEMPLATE_TEMPLATE.md` respectively.
+2. Once you have determined which template file you will need, copy the contents of that file to a local file on your computer. There, fill out the necessary documentation included within the template file. See [Programs for Authoring Markdown](#programs-for-authoring-markdown).
+3. Once you feel ready for the content to go live, navigate to the folder where you would like your new page to live within Github. For example, if you are working on the colors atom, you would navigate like so:
+
+    [Github repo top level](https://github.com/NYPL/nypl-design-system-docs) > [00-atoms folder](https://github.com/NYPL/nypl-design-system-docs/tree/master/00-atoms) > [colors folder](https://github.com/NYPL/nypl-design-system-docs/tree/master/00-atoms/colors)
+
+    Within this folder, you 
+
 Creating New File 
 steps : 
 go to figma file > select frame > click on share > click on embed code 
@@ -56,5 +66,7 @@ _italic_
 ```
 
 ## Programs for Authoring Markdown
+
+## Retiring Documentation
 
 ## Contributing for Developers
