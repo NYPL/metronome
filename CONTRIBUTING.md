@@ -11,8 +11,23 @@ In order to contribute to this documentation you must first have a Github accoun
 6. [Contributing for Developers](#contributing-for-developers)
 
 ## Where Our Documentation Lives
+Our documentation is hosted on Github Pages at [nypl.github.io/nypl-design-system-docs](https://nypl.github.io/nypl-design-system-docs/#/), which is linked to at the top level of this repo at [github.com/NYPL/nypl-design-system-docs](https://github.com/NYPL/nypl-design-system-docs). This site is built using a library called [Docsify](https://docsify.js.org), which takes a collection of markdown files and compiles them into a static site. We host this static site on Github Pages, which is free. Docsify is also free. We use Github's built in tools to edit these markdown files which then are automatically compiled, building a new version of the site each time we hit save on a file.
 
 ## Editing Existing Documentation
+There are two ways to navigating to the documentation you would like to update. The first is by navigating to the file using Github's file directory, the top level of which can be found [here](https://github.com/NYPL/nypl-design-system-docs). The second is by navigating to the desired page on the documentation site itself [here](https://nypl.github.io/nypl-design-system-docs/#/) and clicking the "Edit in Github" text link in the upper right hand corner. This will navigate you to the markdown file in Github.
+
+Regardless of how you navigate to it, the following steps are how you edit and file and contribute it back to the website:
+
+1. Click the pencil icon in the upper right hand corner. Hovering over it should give you the alt text "Edit this file". It is nestled between a small computer icon and a small trash can icon.
+2. This will take you to the edit mode. Make your desired changes in the file. If you are unfamiliar with markdown we have two sections that may be relevant to you: [Learning Markdown](#learning-markdown) | [Programs for Authoring Markdown](#programs-for-authoring-markdown)
+3. When you have completed authoring your changes, scroll to the bottom of the page. Under the subheader "Commit changes", add a meaningful commit message for the changes you have made. An example of a good commit is this one from Ellen:
+
+`Adds subfield categories to 3. AT-001: Page Title"]()`
+
+An example of a poor commit message is this one:
+
+`Updates CONTRIBUTING.md`
+4. After authoring a meaningful commit message, 
 
 ## Creating New Documentation
 Creating New File 
