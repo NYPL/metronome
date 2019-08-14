@@ -1,5 +1,5 @@
 # Component Name
-Status: Working Draft/Final Draft/Published | [Jira Ticket]()
+Status: IA Not Started/IA In-Progress/IA Complete/Design those three statuses/DT three statuses | [Jira Ticket]()
 
 ```Figma embed for unannotated component should go here```
 
