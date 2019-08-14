@@ -5,7 +5,7 @@
 | Design        | In Progress   |
 | Design Tech   | Not Started   |
 
-Working Draft/ | [Jira Ticket]()
+Working Draft/Under Review/Published | [Jira Ticket]()
 
 Components have functional requirements—headline length is 80 characters, marked up with `<h1>`
 Pages/Templates have page rules. Headline length is 50 characters, source is x, rules for each module on the page
