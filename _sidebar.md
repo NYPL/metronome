@@ -1,11 +1,9 @@
 * [Home](/)
 * [Templates](03-templates/templates.md)
-  * [testing rename frame result ](03-templates/testing-rename-frame-result.md)
-  * [rename frame ](03-templates/rename-frame.md)
-  * [original name](03-templates/original-name.md)
-  * [T1 article 9 3](03-templates/article/T1-article-9-3.md)
+* Section Name
   * [T35 Exhibition Index](03-templates/T-35-Exhibition-Index.md)
   * [T12 community showcase](03-templates/T-12-community-showcase.md)
+   * [T1 article 9 3](03-templates/article/T1-article-9-3.md)
   * [layout](03-templates/article/layout.md)
 * [Buttons](00-atoms/buttons/00_button.md)
 * [Images](./404.md)
