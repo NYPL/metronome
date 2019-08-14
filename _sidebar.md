@@ -1,7 +1,7 @@
 * [Home](/)
 * [Templates](03-templates/templates.md)
   * [T1 article 9 3](03-templates/article/T1-article-9-3.md)
-   * [T#-exhibtion index](03-templates/T#-exhibtion index.md)
+  * [T35 Exhibition Index](03-templates/T-35-Exhibition-Index.md)
   * [T12 community showcase](03-templates/T-12-community-showcase.md)
   * [layout](03-templates/article/layout.md)
 * [Buttons](00-atoms/buttons/00_button.md)
