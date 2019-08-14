@@ -4,11 +4,11 @@ In order to contribute to this documentation you must first have a Github accoun
 
 ## Table of Contents
 1. [Where Our Documentation Lives](#where-our-documentation-lives)
-2. Editing Existing Documentation
-3. Creating New Documentation
-4. Learning Markdown
-5. Programs for Authoring Markdown
-6. Contributing for Developers
+2. [Editing Existing Documentation](#editing-existing-documentation)
+3. [Creating New Documentation](#creating-new-documentation)
+4. [Learning Markdown](#learning-markdown)
+5. [Programs for Authoring Markdown](#programs-for-authoring-markdown)
+6. [Contributing for Developers](#contributing-for-developers)
 
 ## Where Our Documentation Lives
 
