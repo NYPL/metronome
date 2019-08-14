@@ -41,7 +41,11 @@ Creating new documentation files is slightly more involved. Should you have issu
 
     [Github repo top level](https://github.com/NYPL/nypl-design-system-docs) > [00-atoms folder](https://github.com/NYPL/nypl-design-system-docs/tree/master/00-atoms) > [colors folder](https://github.com/NYPL/nypl-design-system-docs/tree/master/00-atoms/colors)
 
-    Within this folder, hit the button "Create new file". Give it a sensible name, and then copy and paste your written documentation from the file on your computer into the text box within Github.
+    Within this folder, hit the button "Create new file". Give it a sensible name. This means:
+      - No spaces
+      - No special characters (with the exception of underscores _ or dashes -)
+      - No uppercase characters except for the A, M, O, and T representing atoms, molecules, organisms, and templates
+    Afterward copy and paste your written documentation from the file on your computer into the text box within Github.
 
 4. Once you have added your documentation to the text frame, scroll to the button of the page and author a meaningful commit message. Afterwards, hit the green button labeled "Commit changes".
 5. While you have added a new page and that page now exists on the website, there is currently no way to navigate to it. To get to the page on the website we need to add a reference to the file to the sidebar. Navigate to the [top level](https://github.com/NYPL/nypl-design-system-docs) of our repository and navigate inside `_sidebar.md`, hitting the "Edit" pencil icon.
@@ -65,16 +69,14 @@ Creating new documentation files is slightly more involved. Should you have issu
 9. Navigate to the website. See your change to the sidebar by doing a hard refresh on the page (`Shift` + `Cmd` + `R` for Macs, `Shift` + `Ctrl` + `R` for Windows and Linux machines). Navigate to the link to ensure you have hooked everything up properly.
 
 ## Adding References to Figma Frames
+Most documentation files require a reference to the relevant Figma design(s) to be considered complete. The following is how you add a Figma embed to your markdown file:
 
-Creating New File 
-steps : 
-go to figma file > select frame > click on share > click on embed code 
-go to github home page > click on create new file > enter `name.md` > click on edit > paste - command v
-
-Add new file to side bar 
-steps: 
-click file name  - nypl- design - system - docs 
-click on side.md file > click on edit > Insert new file to right location in the format -   `* [Testing](03-templates/Testing.md)`
+1. Navigate to the relevant Figma file.
+2. Click on the Figma frame you would like to reference. The name of the frame should appear in blue when you have done this properly, and the frame should have a light blue border around it.
+3. In the upper right hand corner of Figma, click the "Share" button.
+4. At the bottom of the modal, click the text link that says "Get embed code".
+5. Click the button that says "Copy".
+6. Paste the code in whatever markdown file needs to have a reference to this Figma file.
 
 ## Learning Markdown
 Our documentation is written using a lightweight markup language called [Markdown](https://en.wikipedia.org/wiki/Markdown). The language uses different kinds of punctuation marks to tell the computer compiler how to format our files without us as authors having to learn and use HTML proper.
@@ -90,7 +92,15 @@ _italic_
 ```
 
 ## Programs for Authoring Markdown
+You may find that authoring markdown in Github becomes tiring or difficult to read. There are a few options if you'd like a different application for authoring markdown.
+
+* [Dillinger](https://dillinger.io): Dillinger is a markdown authoring tool that works in your browser and doesn't require an install, making it good for both Mac and Windows users. It also allows you to see markdown on the left and your compiled HTML on the right.
+* [Bear App](https://bear.app/): If you'd like a native tool, Bear App is free for download on Mac.
+* [Typora](https://typora.io/): Typora is a native tool for Windows.
+
+This list is not exhaustive, and many other free tools exist—feel free to use one of these or find a different one that you like the look and ease of use of the most.
 
 ## Retiring Documentation
+At this point in our process, pre V1, we are not super concerned with retiring documentation yet. However, this item is in our backlog. Please reference [the issue](https://github.com/NYPL/nypl-design-system-docs/issues/5) for updates on this topic.
 
 ## Contributing for Developers
