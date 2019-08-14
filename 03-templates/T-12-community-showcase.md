@@ -28,7 +28,10 @@
 
 
 **Rules:**
+
+
 **Accessibility**
+
 **Source**
 
 ### 4. AI-002: Image 3:4
