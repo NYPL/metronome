@@ -2,8 +2,14 @@
 
 ## 1.OG-001: Header
 Description : Provides main navigation for NYPL.org
-Rules: TBD if we can highlight section< /br> 
-Accessibility : TK (should be rules for template, not individual items, for example page order)< /br> 
+
+
+Rules: TBD if we can highlight section
+
+
+Accessibility : TK (should be rules for template, not individual items, for example page order
+
+
 
 ## 2.MN-001: Breadcrumb
 Description : On mobile, provides a quick link back to the pages parent section.
