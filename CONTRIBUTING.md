@@ -6,10 +6,11 @@ In order to contribute to this documentation you must first have a Github accoun
 1. [Where Our Documentation Lives](#where-our-documentation-lives)
 2. [Editing Existing Documentation](#editing-existing-documentation)
 3. [Creating New Documentation](#creating-new-documentation)
-4. [Adding References to Figma Frames](#adding-references-to-figma-frames)
-5. [Learning Markdown](#learning-markdown)
-6. [Programs for Authoring Markdown](#programs-for-authoring-markdown)
-7. [Contributing for Developers](#contributing-for-developers)
+4. [Common Issues](#common-issues)
+5. [Adding References to Figma Frames](#adding-references-to-figma-frames)
+6. [Learning Markdown](#learning-markdown)
+7. [Programs for Authoring Markdown](#programs-for-authoring-markdown)
+8. [Contributing for Developers](#contributing-for-developers)
 
 ## Where Our Documentation Lives
 Our documentation is hosted on Github Pages at [nypl.github.io/nypl-design-system-docs](https://nypl.github.io/nypl-design-system-docs/#/), which is linked to at the top level of this repo at [github.com/NYPL/nypl-design-system-docs](https://github.com/NYPL/nypl-design-system-docs). This site is built using a library called [Docsify](https://docsify.js.org), which takes a collection of markdown files and compiles them into a static site. We host this static site on Github Pages, which is free. Docsify is also free. We use Github's built in tools to edit these markdown files which then are automatically compiled, building a new version of the site each time we hit save on a file.
@@ -67,6 +68,11 @@ Creating new documentation files is slightly more involved. Should you have issu
     ```
 8. Scroll to the bottom of the page and author a meaningful commit, then hitting the green button that says "Commit changes."
 9. Navigate to the website. See your change to the sidebar by doing a hard refresh on the page (`Shift` + `Cmd` + `R` for Macs, `Shift` + `Ctrl` + `R` for Windows and Linux machines). Navigate to the link to ensure you have hooked everything up properly.
+
+## Common Issues
+Below is a list of common gotchas:
+
+**My file isn't loading properly when I click a link in the sidebar:** This often happens because the sidebar isn't pointing to the correct file, so Docsify doesn't know where to find it. Double check where the file is in the Github directory and ensure what you've put into `_sidebar.md` matches that.
 
 ## Adding References to Figma Frames
 Most documentation files require a reference to the relevant Figma design(s) to be considered complete. The following is how you add a Figma embed to your markdown file:
