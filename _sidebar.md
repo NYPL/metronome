@@ -5,7 +5,7 @@
   * [T35 Exhibition Index](03-templates/T-35-Exhibition-Index.md)
   * [T12 community showcase](03-templates/T-12-community-showcase.md)
   * [layout](03-templates/article/layout.md)
-* [Buttons](00-atoms/buttons/00_button.md)
+* [Buttons](00-atoms/buttons.md)
 * [Images](./404.md)
   * [AI 001 image full bleed](00-atoms/images/AI-001-image-full-bleed.md)
   * [AI 002 image 3x4](00-atoms/images/AI-002-image-3x4.md)
