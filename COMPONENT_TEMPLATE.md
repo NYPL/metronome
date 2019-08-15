@@ -1,5 +1,5 @@
 # Component Name
-**Status:** Working Draft/Under Review/Published | [Jira Ticket]()
+**Status:** Working Draft/Under Review/Published | [Jira Ticket]() | [Drupal Airtable Reference]()
 
 | UX Work       | Status        |
 |---------------|---------------|
@@ -12,10 +12,6 @@
 | Code Review   | Not started   |
 | Shipped       | No            |
 
-
-Components have functional requirements—headline length is 80 characters, marked up with `<h1>`
-Pages/Templates have page rules. Headline length is 50 characters, source is x, rules for each module on the page
-
 ```Figma embed for unannotated component should go here```
 
 ## Component Description
@@ -27,6 +23,8 @@ Requirements for HTML structure and accessibility should go here. For templates,
 Code snippets also belong in here.
 
 ## Data Model
+<!-- iframe for base element data -->
+<!-- iframe(s) for variations data -->
 
 ## Open Issues
 Any known outstanding questions belong here.
