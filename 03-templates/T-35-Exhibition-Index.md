@@ -3,9 +3,7 @@
 ## 1.OG-001: Header
 Description : Provides main navigation for NYPL.org
 
-
 Rules: TBD if we can highlight section
-
 
 Accessibility : TK (should be rules for template, not individual items, for example page order
 
