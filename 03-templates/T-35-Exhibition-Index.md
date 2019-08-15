@@ -1,9 +1,9 @@
 <iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FBYOMrXsWVUntAciomUMskmjz%2FWhat-s-On%3Fnode-id%3D766%253A102078" allowfullscreen></iframe>
 
-### 1.OG-001: Header ##
-< /br> Description : Provides main navigation for NYPL.org
-Rules: TBD if we can highlight section
-Accessibility : TK (should be rules for template, not individual items, for example page order)
+## 1.OG-001: Header ## < /br>
+Description : Provides main navigation for NYPL.org< /br> 
+Rules: TBD if we can highlight section< /br> 
+Accessibility : TK (should be rules for template, not individual items, for example page order)< /br> 
 
 ## 2.MN-001: Breadcrumb ##
 Description : On mobile, provides a quick link back to the pages parent section.
