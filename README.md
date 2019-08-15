@@ -9,8 +9,7 @@ A base dependency is that you must have [Node](https://nodejs.org/en/download/) 
 3. Navigate to that directory using your terminal. Run this project with `docsify serve ./`.
 4. Using your browser, go to `https://localhost:3000` to see this project running on your local computer.
 
-## Contributing to This Project: Writing Documentation 
+## Contributing to This Project
 Because so many people will touch this documentation at some point (even if only briefly), the design team has created longform instructions for how to contribute back to this project in the [CONTRIBUTING.md](https://github.com/NYPL/nypl-design-system-docs/blob/master/CONTRIBUTING.md).
 
-## Contributing to This Project: Writing Code
 The [CONTRIBUTING.md](https://github.com/NYPL/nypl-design-system-docs/blob/master/CONTRIBUTING.md) also includes documentation on how you can contribute to this project if you write code. Another opportunity is to look at [our milestones](https://github.com/NYPL/nypl-design-system-docs/milestones) to understand how we hope this project will evolve and how that might fit into your skillset.
