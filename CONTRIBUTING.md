@@ -104,3 +104,6 @@ This list is not exhaustive, and many other free tools exist—feel free to use 
 At this point in our process, pre V1, we are not super concerned with retiring documentation yet. However, this item is in our backlog. Please reference [the issue](https://github.com/NYPL/nypl-design-system-docs/issues/5) for updates on this topic.
 
 ## Contributing for Developers
+If you'd like to contribute to this project we label starter issues with [good first issue](https://github.com/NYPL/nypl-design-system-docs/labels/good%20first%20issue). We label more involved issues with [help wanted](https://github.com/NYPL/nypl-design-system-docs/labels/help%20wanted).
+
+Another option if you'd like to contribute is to reference our [milestones](https://github.com/NYPL/nypl-design-system-docs/milestones), which track higher-level efforts for this project, and to see any of the milestones fit in with a skillset you may have. If one does, feel free to reach out to [@helenvholmes](https://github.com/helenvholmes).
