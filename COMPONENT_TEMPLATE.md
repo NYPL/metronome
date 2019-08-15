@@ -5,6 +5,11 @@
 | Design        | In Progress   |
 | Design Tech   | Not Started   |
 
+| Development   | Status        |
+|---------------|---------------|
+| Code Review   | Not started   |
+| Shipped       | No            |
+
 Working Draft/Under Review/Published | [Jira Ticket]()
 
 Components have functional requirements—headline length is 80 characters, marked up with `<h1>`
