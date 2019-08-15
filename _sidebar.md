@@ -10,6 +10,7 @@
   * [layout](03-templates/article/layout.md)
 * [Atoms](00-atoms/_atoms.md)
   * [Buttons](00-atoms/buttons.md)
+  * [Colors](00-atoms/colors.md)
 * [Images](./404.md)
   * [AI 001 image full bleed](00-atoms/images/AI-001-image-full-bleed.md)
   * [AI 002 image 3x4](00-atoms/images/AI-002-image-3x4.md)
