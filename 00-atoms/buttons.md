@@ -1,5 +1,15 @@
 # Button Component
 
+## Functional Requirements
+- Button
+Standard CTA
+
+- Text Button
+Alternate, less emphatic button
+
+- Tag Button
+Button that instigates an action, but also conveys information about the items on a page
+
 ## Code
 This is the button logic file that contains the flags for all of the permutations of the buttons you see below. Please see `source/_data/button.json` to see and understand the flags that this component accepts.
 
