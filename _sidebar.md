@@ -6,7 +6,6 @@
   * [TY Online Exhibition](03-templates/T-Y-Online-Exhibition.md)
   * [T13 Individual Exhibtion](03-templates/T-13-Individual-Exhibition.md)
   * [T12 community showcase](03-templates/T-12-community-showcase.md)
-  
    * [T1 article 9 3](03-templates/article/T1-article-9-3.md)
   * [layout](03-templates/article/layout.md)
 * [Buttons](00-atoms/buttons.md)
