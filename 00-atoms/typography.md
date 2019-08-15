@@ -1,6 +1,18 @@
----
-state: inprogress
----
+# Typography
+
+## Design
+The fonts that are used on the site.
+- Primary Font
+Secondary Font
+
+Headings
+Horizontal Rule
+Inline Elements
+Paragraph
+Preformatted Text
+
+--> + Hover Efffect On Card Title + Media Block Title 
+--> + Airia Live Region 
 
 Accessibility & Functional Requirements
 AT-001
@@ -42,3 +54,13 @@ AT-009
 AT-010
 - Is <p>
 - Is only used in semantically correct order
+
+AT-011
+- Is <a>
+- May refer to a page anchor (#unique-id) or full url
+- Never refers to a relative link 
+
++ :   
+>>>
+h3 - typography - hover effect - All Card Title - All Card Title +  
+Aria Region - Atom +  
