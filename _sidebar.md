@@ -102,7 +102,7 @@
   * [MB 001 media block~no image](01-molecules/media-blocks/MB-001-media-block~no-image.md)
   * [MB 001 media block~vertical](01-molecules/media-blocks/MB-001-media-block~vertical.md)
 * [Dates and Events](./404.md)
-  [MT DE 001 date tile single date](01-molecules/dates-and-events/MT-DE-001-date-tile-single-date.md)
+  * [MT DE 001 date tile single date](01-molecules/dates-and-events/MT-DE-001-date-tile-single-date.md)
   * [00_Dates and events](01-molecules/dates-and-events/00_Dates-and-events.md)
   * [MT DE 002 date tile multiple dates](01-molecules/dates-and-events/MT-DE-002-date-tile-multiple-dates.md)
   * [MT DE 003 date tile ongoing](01-molecules/dates-and-events/MT-DE-003-date-tile-ongoing.md)
