@@ -66,21 +66,10 @@
                     $Accessibility_Status = $simple["Accessibility Status"][0]["Name"];
                     $Design_Tech_Status = $simple["Design Tech"][0]["Name"];
 
-                    //$T_Jira_Link="<a href='".$simple["Jira"]."'>Jira Ticket</a>";
-                    //$T_DT_Link="<a href='".$simple["Emulsify Link"]."'>Code</a>";
+                    $T_Jira_Link = "<a href='" . $simple["Jira"] . "'>Jira Ticket</a>";
+                    $T_DT_Link = "<a href='" . $simple["Emulsify Link"] . "'>Code</a>";
 
-
-                    /// Links to code
-                    $not_available = "NA";
-
-                    $T_Twig_Code = "Code " . $not_available;
-                    $T_Twig_Storybook = "Storybook " . $not_available;
-                    $T_React_Code = "Code " . $not_available;
-                    $T_React_Storybook = "Storybook " . $not_available;
-                    $T_Jira_Link = "";
-
-                    $temp_header = return_display_item_header("Template", $t_title, $t_record_id, $t_description, $IA_Status, $Design_Status, $Design_Tech_Status, $Accessibility_Status, $Overall_Status, $T_Jira_Link, $T_React_Storybook, $T_React_Code, $T_Twig_Storybook, $T_Twig_Code,  $C_Primary_Func_Specs, $T_Primary_Accessibility, $these_parameters, $T_Figma_Link);
-
+                    $temp_header = return_display_item_header("Template", $t_title, $t_record_id, $t_description, $IA_Status, $Design_Status, $Design_Tech_Status, $Accessibility_Status, $Overall_Status, $T_Jira_Link, $T_DT_Link, $C_Primary_Func_Specs, $T_Primary_Accessibility, $these_parameters, $T_Figma_Link);
                     echo $temp_header;
 
 

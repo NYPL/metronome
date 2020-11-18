@@ -49,32 +49,12 @@
     $C_Primary_Attributes_Notes = $components[0]["Attributes Notes"];
     $C_Primary_Attributes_Notes = make_markdown($C_Primary_Attributes_Notes);
 
-    /// Links to code
-    $not_available = "NA";
 
-    $C_Twig_Code = "Code " . $not_available;
-    if (!empty($components[0]["Twig Code Link"])) {
-        $C_Twig_Code = "<a href='" . $components[0]["Twig Code Link"] . "' target='new'>Code</a>";
-    }
-    $C_Twig_Storybook = "Storybook " . $not_available;
-    if (!empty($components[0]["Twig Storybook iFrame URL"])) {
-        $C_Twig_Storybook = "<a href='" . $components[0]["Twig Storybook iFrame URL"] . "' target='new'>Storybook</a>";
-    }
-
-    $React_Code = "Code " . $not_available;
-    if (!empty($components[0]["React Code Link"])) {
-        $React_Code = "<a href='" . $components[0]["React Code Link"] . "' target='new'>Code</a>";
-    }
-    $C_React_Storybook = "Storybook " . $not_available;
-    if (!empty($components[0]["React Storybook iFrame URL"])) {
-        $C_React_Storybook = "<a href='" . $components[0]["React Storybook iFrame URL"] . "' target='new'>Storybook</a>";
-    }
-    /////
 
     $C_Jira_Link = "<a href='" . $components[0]["Jira"] . "'>Jira Ticket</a>";
     $C_DT_Link = "<a href='" . $components[0]["Emulsify Link"] . "'>Code</a>";
 
-    /// Status
+
 
     $IA_Status = $components[0]["IA"][0]["Name"];
     $Design_Status = $components[0]["Design"][0]["Name"];
@@ -104,10 +84,7 @@
                     $temp_title = $components[0]["ComponentName"];
                     $C_Figma_Link = $components[0]["Figma Link"];
 
-                    //$temp_header=return_display_item_header("Component", $temp_title, $C_Record_ID, $C_Description, $IA_Status, $Design_Status,$Design_Tech_Status, $Accessibility_Status, $Overall_Status, $C_Jira_Link, $C_DT_Link , $C_Primary_Func_Specs, $C_Primary_Accessibility, $these_parameters, $C_Figma_Link);
-
-                    $temp_header = return_display_item_header("Component", $temp_title, $C_Record_ID, $C_Description, $IA_Status, $Design_Status, $Design_Tech_Status, $Accessibility_Status, $Overall_Status, $C_Jira_Link, $C_React_Storybook, $React_Code, $C_Twig_Storybook, $C_Twig_Code, $C_Primary_Func_Specs, $C_Primary_Accessibility, $these_parameters, $C_Figma_Link);
-
+                    $temp_header = return_display_item_header("Component", $temp_title, $C_Record_ID, $C_Description, $IA_Status, $Design_Status, $Design_Tech_Status, $Accessibility_Status, $Overall_Status, $C_Jira_Link, $C_DT_Link, $C_Primary_Func_Specs, $C_Primary_Accessibility, $these_parameters, $C_Figma_Link);
                     echo $temp_header;
                     ?>
                     <!-- .entry-meta -->

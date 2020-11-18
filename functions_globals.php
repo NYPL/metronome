@@ -1,16 +1,13 @@
 <?php
 	
 $base_url="http://themetronome.co";
-//STAGING
-$base_url="http://themetronome.co/staging/7511";
+//$base_url="http://localhost:8888/metronome_testing";
 
 
-$GLOBALS['config_name']="NYPLdoc2";
+$GLOBALS['config_name']="NYPLdoc1";
 
 //// PROJECTS ////
 $GLOBALS['projects_base_folder']=$base_url."/projects/";
-
-$GLOBALS['epics_base_folder']=$base_url."/epics/";
 
 // link to open specific project in airtable for editing, uses Record_ID
 $GLOBALS['projects_edit_link']="https://airtable.com/tblbFF9urE24fqiVs/viw4VhxrCWn657ezj/";
