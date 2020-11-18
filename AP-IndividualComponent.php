@@ -93,8 +93,9 @@
                     $temp_title = $components[0]["Component Name"];
                     $C_Figma_Link = $components[0]["Figma Embed Link"];
 
-                    $temp_header = return_display_item_header("Component", $temp_title, $C_Record_ID, $component_description, $C_React_Storybook, $React_Code, $C_Twig_Storybook, $C_Twig_Code, $C_Primary_Func_Specs, $C_Primary_Accessibility, $these_parameters, $C_Figma_Link);
+                    $temp_header = return_display_item_header("Component", $temp_title, $C_Record_ID, $component_description, $C_React_Storybook, $React_Code, $C_Twig_Storybook, $C_Twig_Code, $C_Primary_Func_Specs, $C_Primary_Accessibility, " ", $C_Figma_Link);
                     echo $temp_header;
+                    echo "<br><strong>CHANGELOG:</strong> " . make_markdown($changelog);
                     ?>
                     <!-- .entry-meta -->
                 </header><!-- .entry-header -->
@@ -210,9 +211,6 @@
                                     $C_Open_Issues_Resolved .= "<tr><td>" . $t_oi . " " . $oi_edit_link . "</td><td>" . $t_solution . "</td></tr>";
                                 }
                             }
-                            $Unresolved_open_issues = "<tr><td colspan=5><br><span class='urgent_message'>$Num_Open_Issues Open Issues</span> | $oi_link</td></tr>" . $Unresolved_open_issues;
-
-                            echo $Unresolved_open_issues;
 
                             echo "</table><hr>";
                         }

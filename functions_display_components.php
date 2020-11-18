@@ -195,7 +195,8 @@ function return_display_item_header($type, $temp_title, $record_id, $description
     if ($type == "Component") {
         $header .= "
             <tr><td><span class='section_header'>Functional Specs</span><br>$C_Primary_Func_Specs</td></tr>
-            <tr><td><span class='section_header'>Accessibility</span><br>$C_Primary_Accessibility</td></tr>";
+            <tr><td><span class='section_header'>Accessibility</span><br>$C_Primary_Accessibility</td></tr>
+            <tr><td><span class='section_header'>CHANGELOG</span><br>$these_parameters</td></tr>";
     }
 
     $header .= "</table>";

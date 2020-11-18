@@ -58,10 +58,12 @@
                     $T_Project_slug = $simple["Associated Projects"][0]["Slug"];
                     $T_Epics = $simple["Associated Epics"][0]["Epic Name"];
                     $T_Epic_slug = $simple["Associated Epics"][0]["Slug"];
+                    $T_version = $simple["Version"];
+                    $T_changelog = $simple["CHANGELOG"];
 
                     $t_description =
-                        $simple["Slug"] .
-                        ": <br>" .
+                        "<strong>" . $simple["Slug"] .
+                        ", Version: " . $T_version . "</strong><br>" .
                         $simple["Template Description"] .
                         "<p>Associated Project: <a href='" .
                         $GLOBALS['projects_base_folder'] .
@@ -71,6 +73,7 @@
                         $T_Epic_slug . "'/>" .
                         $T_Epics . "</a>" .
                         "</p>";
+
 
                     /// Links to code
                     $not_available = "NA";
@@ -123,6 +126,8 @@
 
                             $T_Accessibility_Notes = make_markdown($e["Accessibility"]);
                             echo "<br><span class='section_header'>Accessibility</span>" . $T_Accessibility_Notes;
+
+                            echo "<br><strong>CHANGELOG:<br>" . make_markdown($T_changelog);
                         }
                     } else {
                         echo "Template not found";
