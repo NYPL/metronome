@@ -33,11 +33,6 @@
                     $query->sort("Component Name", "asc");
                     //$query->sort("ComponentName","asc");
                     $components = new AirpressCollection($query);
-                    $components->populateRelatedField("IA", "UX Status");
-                    $components->populateRelatedField("Design", "UX Status");
-                    $components->populateRelatedField("Design Technology", "UX Status");
-                    $components->populateRelatedField("Accessibility Status", "UX Status");
-                    $components->populateRelatedField("Overall Status", "UX Status");
 
                     if (!is_airpress_empty($components)) {
 
@@ -53,12 +48,6 @@
                         $components_display = "";
                         foreach ($components as $e) {
 
-                            //status
-                            $IA_Status = $e["IA"][0]["Name"];
-                            $Design_Status = $e["Design"][0]["Name"];
-                            $Design_Tech_Status = $e["Design Technology"][0]["Name"];
-                            $Accessibility_Status = $e["Accessibility Status"][0]["Name"];
-                            $Overall_Status = $e["Overall Status"][0]["Name"];
                             //description
                             $C_Description = $e["Component Description"];
                             //base type
@@ -69,10 +58,8 @@
                             $C_Edit_Link = $GLOBALS['components_edit_link'] . $C_Record_ID . "?blocks=hide";
                             $C_Edit_Link = "<a href='" . $C_Edit_Link . "' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
 
-                            //print $C_Base_Type." | ".$e["ComponentName"]."<hr>";
-
                             // Grouping by type
-                            $temp_row = return_project_item_row($C_View_Link, $e["Component Name"], $IA_Status, $Design_Status, $Accessibility_Status, $Design_Tech_Status, $Overall_Status, $C_Edit_Link, $C_Description);
+                            $temp_row = return_project_item_row($C_View_Link, $e["Component Name"], $C_Description);
 
 
                             if ($e["Deprecated"] == "False") {
