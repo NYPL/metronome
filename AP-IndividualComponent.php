@@ -110,8 +110,8 @@
                     $temp_title = $components[0]["Component Name"];
 
                     // usage: AirPressQuery($tableName, CONFIG_ID or CONFIG_NAME)
-                    $query2 = new AirpressQuery("Component to Template LookUp", CONFIG_NAME);
-                    $query2->filterByFormula("{Component}='$temp_title'");
+                    $query2 = new AirpressQuery("Template Placement Requirements", CONFIG_NAME);
+                    $query2->filterByFormula("{Placed Component}='$temp_title'");
                     $used_in_templates = new AirpressCollection($query2);
                     $used_in_templates->populateRelatedField("Template", "Templates");
 
@@ -309,7 +309,7 @@
                             $C_Optional = $e["Optional"];
 
                             $these_parameters = return_my_parameters($e["Placed Component"][0]);
-                            $these_details = return_placed_component_details("Component", $e["Record ID"], $placement_id, $e["Order"], $C_Manual_or_Auto, $Placement_Description, $Placement_Rules, $IA_Status, $Design_Status, $Design_Tech_Status, $Accessibility_Status, $Overall_Status, $C_Name, $C_Slug, $component_description, $C_Sub_Accessibility, $C_Sub_Func_Specs, $these_parameters, $C_Optional);
+                            $these_details = return_placed_component_details("Component", $e["Record ID"], $placement_id, $e["Order"], $C_Manual_or_Auto, $Placement_Description, $Placement_Rules, $C_Name, $C_Slug, $component_description, $C_Sub_Accessibility, $C_Sub_Func_Specs, $these_parameters, $C_Optional);
 
                             //echo $these_details;
                             echo $these_details;

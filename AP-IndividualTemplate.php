@@ -34,10 +34,8 @@
     $query = new AirpressQuery("Templates", CONFIG_NAME);
     $query->filterByFormula("{Slug}='$passed_template'");
     $templates = new AirpressCollection($query);
-    $templates->populateRelatedField("IA", "UX Status");
-    $templates->populateRelatedField("Design", "UX Status");
-    $templates->populateRelatedField("Design Tech", "UX Status");
-    $templates->populateRelatedField("Accessibility Status", "UX Status");
+    $templates->populateRelatedField("Associated Projects", "Projects");
+    $templates->populateRelatedField("Associated Epics", "Epics");
 
     $T_Record_ID = $templates[0]["Record ID"];
 
@@ -54,15 +52,25 @@
 
                     $t_title = $simple["Template Name"];
                     $t_record_id = $simple["Record ID"];
-                    $t_description = $simple["Slug"] . ": " . $simple["Template Description"];
 
                     $T_Figma_Link = $simple["Figma Link"];
+                    $T_Projects = $simple["Associated Projects"][0]["Project Name"];
+                    $T_Project_slug = $simple["Associated Projects"][0]["Slug"];
+                    $T_Epics = $simple["Associated Epics"][0]["Epic Name"];
+                    $T_Epic_slug = $simple["Associated Epics"][0]["Slug"];
 
-                    $IA_Status = $simple["IA"][0]["Name"];
-                    $Design_Status = $simple["Design"][0]["Name"];
-                    $Accessibility_Status = $simple["Accessibility Status"][0]["Name"];
-                    $Design_Tech_Status = $simple["Design Tech"][0]["Name"];
-
+                    $t_description =
+                        $simple["Slug"] .
+                        ": <br>" .
+                        $simple["Template Description"] .
+                        "<p>Associated Project: <a href='" .
+                        $GLOBALS['projects_base_folder'] .
+                        $T_Project_slug .
+                        "'/>" . $T_Projects . "</a>" .
+                        "<br>Associated Epic: <a href='" . $GLOBALS['epics_base_folder'] .
+                        $T_Epic_slug . "'/>" .
+                        $T_Epics . "</a>" .
+                        "</p>";
 
                     /// Links to code
                     $not_available = "NA";
@@ -87,39 +95,6 @@
 
                     <?php
 
-                    //////// WHAT PROJECTS AM I USED IN?
-                    //////// There should be a better way to do this
-                    //////// Similar to templates look up in Project Page
-
-                    $temp_title = $templates[0]["Template Name"];
-
-                    // usage: AirPressQuery($tableName, CONFIG_ID or CONFIG_NAME)
-                    $query2 = new AirpressQuery("Projects", CONFIG_NAME);
-                    $query2->filterByFormula("{Associated Templates}='$temp_title'");
-                    $used_in_projects = new AirpressCollection($query2);
-                    $used_in_projects->populateRelatedField("Associated Projects", "Projects");
-                    $used_in_projects->populateRelatedField("Associated Projects|Project State", "Project Status");
-
-                    //////// DISPLAY PROJECTS USED IN
-                    $T_Used_In_Projects = "This template is not currently used by any projects";
-
-                    if (!is_airpress_empty($used_in_projects)) {
-                        $num_projects = count($used_in_projects);
-
-                        if (!empty($used_in_projects)) {
-                            $T_Used_In_Projects = "Used in $num_projects project(s): ";
-                            foreach ($used_in_projects as $e) {
-                                $P_Name = $e["Project"][0]["Project Name"];
-                                $P_Status = $e["Project"][0]["Project State"][0]["Name"];
-                                $P_Slug = $e["Project"][0]["Slug"];
-
-                                $P_link = "<a href=" . $GLOBALS['projects_base_folder'] . $P_Slug . "/?fresh=true>$P_Name</a>";
-                                $T_Used_In_Projects .= $P_link . " (" . $P_Status . ") | ";
-                            }
-                        }
-                    }
-
-
                     //////// DISPLAY TEMPLATE DETAILS
 
                     // We need $T_Name for later, a little sloppy
@@ -143,37 +118,6 @@
                             // AND {Resolved}!=TRUE()
                             $query_oi->sort("Date Created", "asc");
                             $T_Open_Issues = new AirpressCollection($query_oi);
-
-                            // HIDE OPEN ISSUES display open issues
-                            echo "<table>";
-
-                            /// List my Open Issues
-                            // FIX need to get number of RESOLVED vs UNRESOLVED open issues - annoying I can't figure out how to set query
-                            $Unresolved_open_issues = "";
-                            $Num_Open_Issues = 0;
-                            // link to add an open issue
-                            $oi_link = "<a href='https://airtable.com/shrIqCB8iXad22n3P?prefill_Template%20Name=" . $T_Name . "' target=new>add an open issue</a>";
-
-                            foreach ($T_Open_Issues as $oi) {
-                                $oi_edit_link = "<a href='https://airtable.com/tbl401gXwwvqhjlEY/viwefZa7OLF9qrDfl/" . $oi["Record ID"] . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
-                                $oi_resolve_link = "<a href='https://airtable.com/tbl401gXwwvqhjlEY/viwyi9jxh3vJ5UL4k/" . $oi["Record ID"] . "?blocks=hide'  target='new'>resolve</a>";
-                                $t_oi = "<strong>" . $oi["Type"] . "</strong> " . $oi['Open Issue'];
-                                $t_oi = make_markdown($t_oi);
-                                if ($oi["Resolved"] != 1) {
-                                    $t_oi .= $oi_edit_link . "  |  " . $oi_resolve_link;
-                                    $Unresolved_open_issues .= "<tr><td colspan=5>" . $t_oi . "</td></tr>";
-                                    $Num_Open_Issues += 1;
-                                } else {
-                                    // if resolved, display at bottom of page. This is passed through $T_Open_Issues_Resolved
-                                    $t_solution = make_markdown($oi["Solution"]);;
-                                    $T_Open_Issues_Resolved .= "<tr><td>" . $t_oi . " " . $oi_edit_link . "</td><td>" . $t_solution . "</td></tr>";
-                                }
-                            }
-                            $Unresolved_open_issues = "<tr><td colspan=5><span class='urgent_message'>$Num_Open_Issues Open Issues</span> | $oi_link</td></tr>" . $Unresolved_open_issues;
-
-                            echo $Unresolved_open_issues;
-
-                            echo "</table><hr>";
 
                             // display accessibility notes	
 
@@ -247,9 +191,6 @@
 
                         $test = return_placed_component_details("Template", $C_to_T_Record_ID, $C_Record_ID, $number, $C_Manual_or_Auto, $C_Placement_Des, $Page_Rules, $C_Name, $C_Slug, $C_Description, $C_Accessibility, $C_Func_Specs, $these_parameters, $optional);
 
-
-
-
                         echo $test;
                     }
                     echo "</table>";
@@ -257,12 +198,6 @@
                     // NOTES ON USAGE
                     echo "<hr>";
                     echo "<span class='themsthebreaks'>" . $T_Used_In_Projects . "</span>";
-
-
-                    // NOTES ON RESOLVED OPEN ISSUES
-                    echo "<hr>";
-                    echo "Resolved Open Issues";
-                    echo "<table>" . $T_Open_Issues_Resolved . "</table>";
 
                     ?>
 
