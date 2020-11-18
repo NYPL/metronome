@@ -170,13 +170,8 @@ function return_parameter_detail($value, $default, $title)
     return $this_parameter;
 }
 
-function return_display_item_header($type, $temp_title, $record_id, $description, $IA_Status, $Design_Status, $Design_Tech_Status, $Accessibility_Status, $Overall_Status, $C_Jira_Link, $C_React_Storybook, $React_Code, $C_Twig_Storybook, $C_Twig_Code, $C_Primary_Func_Specs, $C_Primary_Accessibility, $these_parameters, $figma)
+function return_display_item_header($type, $temp_title, $record_id, $description, $C_React_Storybook, $React_Code, $C_Twig_Storybook, $C_Twig_Code, $C_Primary_Func_Specs, $C_Primary_Accessibility, $these_parameters, $figma)
 {
-
-    $IA_Status = set_style_to_status($IA_Status, "");
-    $Design_Status = set_style_to_status($Design_Status, "");
-    $Design_Tech_Status = set_style_to_status($Design_Tech_Status, "");
-    $Accessibility_Status = set_style_to_status($Accessibility_Status, "");
 
 
     $description = make_markdown($description);
@@ -187,10 +182,6 @@ function return_display_item_header($type, $temp_title, $record_id, $description
 
     // display status bar	
     $status_table = "<table class='status_bar'><tr>";
-    $status_table .= "<td>IA: " . $IA_Status . "</td>";
-    $status_table .= "<td>Des: " . $Design_Status . "</td>";
-    $status_table .= "<td>AC: " . $Accessibility_Status . "</td>";
-    $status_table .= "<td>DT: " . $Design_Tech_Status . "</td>";
     $status_table .= "<td><strong>React</strong>:" . $C_React_Storybook . " | " . $React_Code . "</td>";
     $status_table .= "<td><strong>Twig</strong>: " . $C_Twig_Storybook . " | " . $C_Twig_Code . "</td>";
     $status_table .= "<td>&nbsp;</td>";
@@ -208,14 +199,6 @@ function return_display_item_header($type, $temp_title, $record_id, $description
 
     // link to edit parameters and details (not shown for template)
     $edit_all_para_and_details = "<a href='" . $GLOBALS['components_parameters_and_details_edit_link'] . $record_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
-
-    //$Overall_Status
-    $header = "<table>";
-    if ($Overall_Status == "Paused") {
-        $header .= "<tr><td colspan=3 class='status_paused very_urgent_message'>This component or template has been paused</td></tr>";
-    }
-    //add space
-
 
     $header .= "<tr><td colspan=2><h1 class='entry-title'>$temp_title </h1></td><td style='text-align:right;'>$temp_edit_Link</td></tr>";
     $header .= "<tr><td colspan=3>$description</td></tr>";

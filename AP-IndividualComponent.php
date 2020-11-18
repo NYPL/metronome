@@ -33,11 +33,6 @@
     $query = new AirpressQuery("Components", CONFIG_NAME);
     $query->filterByFormula("{Slug}='$passed_component'");
     $components = new AirpressCollection($query);
-    $components->populateRelatedField("IA", "UX Status");
-    $components->populateRelatedField("Design", "UX Status");
-    $components->populateRelatedField("Design Tech", "UX Status");
-    $components->populateRelatedField("Overall Status", "UX Status");
-    $components->populateRelatedField("Accessibility Status", "UX Status");
 
 
     $C_Record_ID = $components[0]["Record ID"];
@@ -89,11 +84,6 @@
 
     $these_parameters = return_my_parameters($components[0]);
 
-    //$C_Primary_Details=$components[0]["Details"];
-
-    //$C_Primary_Definition=return_component_definition("Primary", $C_Primary_Attributes_Notes, $C_Primary_Func_Specs,$C_Primary_Accessibility, $C_Primary_Details, $C_Primary_States, $C_Primary_Parameters, $C_Primary_Record_ID, $C_Primary_Max_Char, $C_Primary_Max_Char_Other, $Text_Format);
-
-
     ?>
 
     <div id="primary" class="content-area">
@@ -105,7 +95,7 @@
                     $temp_title = $components[0]["Component Name"];
                     $C_Figma_Link = $components[0]["Figma Embed Link"];
 
-                    $temp_header = return_display_item_header("Component", $temp_title, $C_Record_ID, $C_Description, $IA_Status, $Design_Status, $Design_Tech_Status, $Accessibility_Status, $Overall_Status, $C_Jira_Link, $C_React_Storybook, $React_Code, $C_Twig_Storybook, $C_Twig_Code, $C_Primary_Func_Specs, $C_Primary_Accessibility, $these_parameters, $C_Figma_Link);
+                    $temp_header = return_display_item_header("Component", $temp_title, $C_Record_ID, $C_Description, $C_React_Storybook, $React_Code, $C_Twig_Storybook, $C_Twig_Code, $C_Primary_Func_Specs, $C_Primary_Accessibility, $these_parameters, $C_Figma_Link);
                     echo $temp_header;
                     ?>
                     <!-- .entry-meta -->

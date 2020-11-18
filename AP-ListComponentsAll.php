@@ -76,8 +76,6 @@
                     }
                     ?>
 
-
-
                 </div>
             </article>
         </div><!-- #content -->
