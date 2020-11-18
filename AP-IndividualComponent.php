@@ -44,6 +44,16 @@
     $C_Primary_Attributes_Notes = $components[0]["Attributes Notes"];
     $C_Primary_Attributes_Notes = make_markdown($C_Primary_Attributes_Notes);
 
+    /// Status
+    $deprecated_bool = $components[0]["Deprecated"];
+    $version = $components[0]["Version Number"];
+    $changelog = $components[0]["CHANGELOG"];
+
+    $component_description =
+        "<strong>Deprecated:</strong> " . $deprecated_bool . "<br>" .
+        "<strong>Version Number:</strong> " . $version . "<br><p>" .
+        $C_Description . "</p>";
+
     /// Links to code
     $not_available = ": N/A";
 
@@ -70,14 +80,6 @@
         $C_React_Storybook = "Storybook" . $not_available;
     }
 
-
-    /// Status
-    $IA_Status = $components[0]["IA"][0]["Name"];
-    $Design_Status = $components[0]["Design"][0]["Name"];
-    $Design_Tech_Status = $components[0]["Design Tech"][0]["Name"];
-    $Accessibility_Status = $components[0]["Accessibility Status"][0]["Name"];
-    $Overall_Status = $components[0]["Overall Status"][0]["Name"];
-
     $these_parameters = return_my_parameters($components[0]);
 
     ?>
@@ -91,7 +93,7 @@
                     $temp_title = $components[0]["Component Name"];
                     $C_Figma_Link = $components[0]["Figma Embed Link"];
 
-                    $temp_header = return_display_item_header("Component", $temp_title, $C_Record_ID, $C_Description, $C_React_Storybook, $React_Code, $C_Twig_Storybook, $C_Twig_Code, $C_Primary_Func_Specs, $C_Primary_Accessibility, $these_parameters, $C_Figma_Link);
+                    $temp_header = return_display_item_header("Component", $temp_title, $C_Record_ID, $component_description, $C_React_Storybook, $React_Code, $C_Twig_Storybook, $C_Twig_Code, $C_Primary_Func_Specs, $C_Primary_Accessibility, $these_parameters, $C_Figma_Link);
                     echo $temp_header;
                     ?>
                     <!-- .entry-meta -->
