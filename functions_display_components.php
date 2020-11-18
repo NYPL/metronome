@@ -1,21 +1,12 @@
 <?php
 
 
-function return_placed_component_details($placed_in, $placement_id, $record_id, $number, $man_auto, $placement_reason, $placement_rules, $IA_Status, $Design_Status, $Design_Tech_Status, $Accessibility_Status, $Overall_Status, $component_name, $C_Slug, $component_description, $accessibility, $functional_specs, $c_detail_All, $optional)
+function return_placed_component_details($placed_in, $placement_id, $record_id, $number, $man_auto, $placement_reason, $placement_rules, $component_name, $C_Slug, $component_description, $accessibility, $functional_specs, $c_detail_All, $optional)
 {
-
-
-
-    // Tweaks to visuals
-    $IA_Status = set_style_to_status($IA_Status, "IA");
-    $Design_Status = set_style_to_status($Design_Status, "Design");
-    $Design_Tech_Status = set_style_to_status($Design_Tech_Status, "Design Technology");
-    $Accessibility_Status = set_style_to_status($Accessibility_Status, "Accessibility");
 
     $component_description = make_markdown($component_description);
     $accessibility = make_markdown($accessibility);
     $functional_specs = make_markdown($functional_specs);
-    $c_detail_All = make_markdown($c_detail_All);
 
     $temp_view_Link = $GLOBALS['components_base_folder'] . $C_Slug . "/?fresh=true";
     $temp_view_Link = "<a href='" . $temp_view_Link . "'>" . $component_name . "</a>";
@@ -35,11 +26,6 @@ function return_placed_component_details($placed_in, $placement_id, $record_id, 
         $placement_rules = make_markdown($placement_rules);
         $placement_rules = "<tr ><td >&nbsp;</td><td >&nbsp;</td><td colspan=2 class='placement_details'><span class='section_header'>Placement Details & Rules</span>" . $placement_rules . "</td></tr>";
         $first_border = "class=' '";
-    }
-
-    $status_message = "";
-    if ($Overall_Status == "Paused") {
-        $status_message .= "<tr><td colspan=2 xclass='status_paused very_urgent_message'>&nbsp;</td><td colspan=2 class='status_paused very_urgent_message'>This item has been paused</td></tr>";
     }
 
     // am I optional?
@@ -80,7 +66,7 @@ function return_placed_component_details($placed_in, $placement_id, $record_id, 
     $return_this .= $status_message;
     $return_this .= $placement_rules;
 
-    $return_this .= "<tr ><td>&nbsp;</td><td>&nbsp;</td><td><strong>" . $temp_view_Link . "</strong></td><td  style='text-align: right;'>" . $IA_Status . $Design_Status . $Accessibility_Status . $Design_Tech_Status . $temp_edit_Link . "</td></tr>";
+    $return_this .= "<tr ><td>&nbsp;</td><td>&nbsp;</td><td><strong>" . $temp_view_Link . "</strong></td></tr>";
 
     $return_this .= "<tr><td>&nbsp;</td><td>&nbsp;</td><td colspan=2>" . $component_description . "</td></tr>";
 
@@ -88,7 +74,7 @@ function return_placed_component_details($placed_in, $placement_id, $record_id, 
     // link to edit parameters and details
     $edit_all_para_and_details = "<a href='" . $GLOBALS['components_parameters_and_details_edit_link'] . $record_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
 
-    $return_this .= "<tr><td>&nbsp;</td><td>&nbsp;</td><td width=45% ><span class='section_header'>Functional Specs</span>" . $functional_specs . "<br><span class='section_header'>Accessibility</span>" . $accessibility . "</td><td  width=45%width=45% ><span class='section_header'>Details & Parameters " . $edit_all_para_and_details . "</span>" . $c_detail_All . "</td></tr>";
+    $return_this .= "<tr><td>&nbsp;</td><td>&nbsp;</td><td><span class='section_header'>Functional Specs</span>" . $functional_specs . "<br><span class='section_header'>Accessibility</span>" . $accessibility . "</td></tr>";
 
     $return_this .= "<tr><td>&nbsp;</td><td>&nbsp;</td><td colspan=2>" . $my_placed_components . "</td></tr>";
     $return_this .= "<tr><td colspan=4>&nbsp;</td></tr>";
@@ -177,8 +163,6 @@ function return_display_item_header($type, $temp_title, $record_id, $description
     $description = make_markdown($description);
     $C_Primary_Func_Specs = make_markdown($C_Primary_Func_Specs);
     $C_Primary_Accessibility = make_markdown($C_Primary_Accessibility);
-    $C_Primary_Parameters = make_markdown($C_Primary_Parameters);
-
 
     // display status bar	
     $status_table = "<table class='status_bar'><tr>";
@@ -200,16 +184,18 @@ function return_display_item_header($type, $temp_title, $record_id, $description
     // link to edit parameters and details (not shown for template)
     $edit_all_para_and_details = "<a href='" . $GLOBALS['components_parameters_and_details_edit_link'] . $record_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
 
-    $header .= "<tr><td colspan=2><h1 class='entry-title'>$temp_title </h1></td><td style='text-align:right;'>$temp_edit_Link</td></tr>";
-    $header .= "<tr><td colspan=3>$description</td></tr>";
-    $header .= "<tr><td colspan=3>$status_table</td></tr>";
+    $header .= "<tr><td><h1 class='entry-title'>$temp_title </h1></td></tr>";
+    $header .= "<tr><td>$description</td></tr>";
+    $header .= "<tr><td>$status_table</td></tr>";
 
     $figma = display_ia_design($figma);
-    $header .= "<tr><td colspan=3><strong>Design & Schematic</strong><br>" . $figma . "</td></tr>";
+    $header .= "<tr><td><strong>Design & Schematic</strong><br>" . $figma . "<br></td></tr>";
 
 
     if ($type == "Component") {
-        $header .= "<tr><td width=60% style='padding-right:35px;''><span class='section_header'>Functional Specs</span>$C_Primary_Func_Specs<br><span class='section_header'>Accessibility</span>$C_Primary_Accessibility</td><td colspan=2><span class='section_header'>Details & Parameters " . $edit_all_para_and_details . "</span><br>" . $these_parameters . "</td></tr>";
+        $header .= "
+            <tr><td><span class='section_header'>Functional Specs</span><br>$C_Primary_Func_Specs</td></tr>
+            <tr><td><span class='section_header'>Accessibility</span><br>$C_Primary_Accessibility</td></tr>
     }
 
     $header .= "</table>";

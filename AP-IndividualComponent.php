@@ -1,4 +1,4 @@
-<?php /* Template Name: AP-IndividualComponent */ ?>
+<?php /* Template Name: Individual Component */ ?>
 
 <? get_header(); ?>
 
@@ -77,10 +77,6 @@
     $Design_Tech_Status = $components[0]["Design Tech"][0]["Name"];
     $Accessibility_Status = $components[0]["Accessibility Status"][0]["Name"];
     $Overall_Status = $components[0]["Overall Status"][0]["Name"];
-
-    $C_Primary_Record_ID = $components[0]["Record ID"];
-
-
 
     $these_parameters = return_my_parameters($components[0]);
 
@@ -259,10 +255,6 @@
                             $attr_lu = $e["C_T_ID"];
                             $basedetails = "<span class='urgent_message'>Component doesn't have a type assigned</span>";
 
-
-
-
-
                             //// My Core Attributes
                             $C_Sub_Attributes_Notes = $e["Placed Component"][0]["Attributes Notes"];
                             $C_Sub_Func_Specs = $e["Placed Component"][0]["Functional Specs"];
@@ -276,8 +268,6 @@
 
                             $C_Sub_Text_Format = $e["Placed Component"][0]["TEXT: Format"];
 
-                            //$C_Sub_Definition=return_component_definition("Sub", $C_Sub_Attributes_Notes, $C_Sub_Func_Specs,$C_Sub_Accessibility, $C_Sub_Details, $C_Sub_States, $C_Sub_Parameters, $C_Sub_Record_ID, $C_Sub_Max_Char, $C_Sub_Max_Char_Other, $C_Sub_Text_Format );
-
                             //My Placement Details
                             $Source = $e["Source"];
                             $Source_Other = $e["Source Other"];
@@ -287,10 +277,6 @@
                             $Placement_Optional = $e["Optional"];
                             $Placement_Parameters = $e["Placed Parameters"];
                             $Placement_Details = $e["Details"];
-
-
-                            // send my CtoC ID
-                            //$C_Placement_Details=return_placement_details($e["Record ID"], $Source, $Source_Other, $Placed_Accessibility, $Placed_Functionality, $Placement_Description, $Placement_Optional, $Placement_Parameters, $Placement_Details);
 
                             $C_Manual_or_Auto = $e["Manual or Auto"];
                             if (!empty($C_Manual_or_Auto)) {

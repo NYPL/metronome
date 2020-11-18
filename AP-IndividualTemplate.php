@@ -1,4 +1,4 @@
-<?php /* Template Name: AP-IndividualTemplate */ ?>
+<?php /* Template Name: Individual Template */ ?>
 
 <? get_header(); ?>
 
@@ -73,7 +73,7 @@
                     $T_React_Storybook = "Storybook " . $not_available;
                     $T_Jira_Link = "";
 
-                    $temp_header = return_display_item_header("Template", $t_title, $t_record_id, $t_description, $IA_Status, $Design_Status, $Design_Tech_Status, $Accessibility_Status, $Overall_Status, $T_Jira_Link, $T_React_Storybook, $T_React_Code, $T_Twig_Storybook, $T_Twig_Code,  $C_Primary_Func_Specs, $T_Primary_Accessibility, $these_parameters, $T_Figma_Link);
+                    $temp_header = return_display_item_header("Template", $t_title, $t_record_id, $t_description, $T_React_Storybook, $T_React_Code, $T_Twig_Storybook, $T_Twig_Code,  $C_Primary_Func_Specs, $T_Primary_Accessibility, $these_parameters, $T_Figma_Link);
 
 
                     echo $temp_header;
@@ -245,7 +245,7 @@
                         $these_parameters = return_my_parameters($e["Placed Component"][0]);
                         $optional = $e["Optional or Required"];
 
-                        $test = return_placed_component_details("Template", $C_to_T_Record_ID, $C_Record_ID, $number, $C_Manual_or_Auto, $C_Placement_Des, $Page_Rules, $IA_Status, $Design_Status, $Design_Tech_Status, $Accessibility_Status, $Overall_Status, $C_Name, $C_Slug, $C_Description, $C_Accessibility, $C_Func_Specs, $these_parameters, $optional);
+                        $test = return_placed_component_details("Template", $C_to_T_Record_ID, $C_Record_ID, $number, $C_Manual_or_Auto, $C_Placement_Des, $Page_Rules, $C_Name, $C_Slug, $C_Description, $C_Accessibility, $C_Func_Specs, $these_parameters, $optional);
 
 
 
