@@ -48,10 +48,12 @@
     $deprecated_bool = $components[0]["Deprecated"];
     $version = $components[0]["Version Number"];
     $changelog = $components[0]["CHANGELOG"];
+    $WIP = $components[0]["Work in Process"];
 
     $component_description =
         "<strong>Deprecated:</strong> " . $deprecated_bool . "<br>" .
         "<strong>Version Number:</strong> " . $version . "<br><p>" .
+        "<strong>Work in Progress:</strong> " . $WIP . "<br><p>" .
         $C_Description . "</p>";
 
     /// Links to code
