@@ -88,15 +88,27 @@
                         $component_collection->populateRelatedField("Placed Component", "Components");
 
                         $components_list = "";
+                        $all_components_raw = array();
 
                         foreach ($component_collection as $component) {
                             if (!empty($component["Placed Component"][0]["Component Name"])) {
                                 $component_name = $component["Placed Component"][0]["Component Name"];
                                 $component_slug = $component["Placed Component"][0]["Slug"];
                                 $component_link = $GLOBALS['components_base_folder'] . $component_slug;
-                                $each_component = [$component_link, $component_name];
-                                $components_list .= "<li><h4><a href='" . $component_link . "'>" . $component_name . "</a></h4></li>";
+                                $temp_component = array(
+                                    "name" => $component_name,
+                                    "link" => $component_link
+                                );
+                                //if I don't already exist in larger array, add me
+                                if (!array_key_exists($component_name, $all_components_raw)) {
+                                    $all_components_raw += array($component_name => $temp_array);
+                                }
                             }
+                        }
+
+                        foreach ($all_components_raw as $component) {
+                            // $components_list .= "<li><h4><a href='" . $component_link . "'>" . $component_name . "</a></h4></li>";
+                            $components_list .= "<p>" . $component . "</p>";
                         }
 
                         // Create page
