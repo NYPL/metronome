@@ -87,7 +87,6 @@
                         $component_collection = new AirpressCollection($component_query);
                         $component_collection->populateRelatedField("Placed Component", "Components");
 
-                        $components_list = "";
                         $all_components_raw = array();
 
                         foreach ($component_collection as $component) {
@@ -99,20 +98,21 @@
                                     "name" => $component_name,
                                     "link" => $component_link
                                 );
-                                //if I don't already exist in larger array, add me
+                                // If I don't already exist in larger array, add me
                                 if (!array_key_exists($component_name, $all_components_raw)) {
-                                    $all_components_raw += array($component_name => $temp_array);
+                                    $all_components_raw += array($component_name => $temp_component);
                                 }
                             }
                         }
 
-                        foreach ($all_components_raw as $component) {
-                            // $components_list .= "<li><h4><a href='" . $component_link . "'>" . $component_name . "</a></h4></li>";
-                            $components_list .= "<p>" . $component . "</p>";
+                        sort($all_components_raw);
+                        $components_list = "";
+                        foreach ($all_components_raw as $component => $val) {
+                            $components_list .= "<li><h4><a href='" . $val["link"] . "'>" . $val["name"] . "</a></h4></li>";
                         }
 
                         // Create page
-                        echo $templates_header . "<ol>$templates_list</ol><h2>Components Used</h2><ul>" . $components_list . "</ul>";
+                        echo $templates_header . "<ol>$templates_list</ol><h2>" . count($all_components_raw) . " Components Used</h2><ul>" . $components_list . "</ul>";
                         ?>
 
                     </div>
