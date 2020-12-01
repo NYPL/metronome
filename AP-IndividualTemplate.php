@@ -61,17 +61,22 @@
                     $T_version = $simple["Version"];
                     $T_changelog = $simple["CHANGELOG"];
 
+
+                    $t_project_string = "Associated Project: <a href='" .
+                        $GLOBALS['projects_base_folder'] .
+                        $T_Project_slug .
+                        "'>" . $T_Projects . "</a>";
+
+                    $t_epic_string = "<br>Associated Epic: <a href='" . $GLOBALS['epics_base_folder'] .
+                        $T_Epic_slug . "'>" .
+                        $T_Epics . "</a>";
+
                     $t_description =
                         "<strong>" . $simple["Slug"] .
                         ", Version: " . $T_version . "</strong><br>" .
-                        $simple["Template Description"] .
-                        "<p>Associated Project: <a href='" .
-                        $GLOBALS['projects_base_folder'] .
-                        $T_Project_slug .
-                        "'/>" . $T_Projects . "</a>" .
-                        "<br>Associated Epic: <a href='" . $GLOBALS['epics_base_folder'] .
-                        $T_Epic_slug . "'/>" .
-                        $T_Epics . "</a>" .
+                        $simple["Template Description"] . "<p class='aslkdjfkd'>" .
+                        $t_project_string .
+                        $t_epic_string .
                         "</p>";
 
 
