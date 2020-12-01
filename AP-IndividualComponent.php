@@ -97,7 +97,7 @@
 
                     $temp_header = return_display_item_header("Component", $temp_title, $C_Record_ID, $component_description, $C_React_Storybook, $React_Code, $C_Twig_Storybook, $C_Twig_Code, $C_Primary_Func_Specs, $C_Primary_Accessibility, " ", $C_Figma_Link);
                     echo $temp_header;
-                    echo "<br><strong>CHANGELOG:</strong> " . make_markdown($changelog);
+                    echo "<br>" . make_markdown($changelog);
                     ?>
                     <!-- .entry-meta -->
                 </header><!-- .entry-header -->
