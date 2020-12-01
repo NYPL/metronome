@@ -192,19 +192,18 @@ function return_project_card($card_wrap, $base_folder, $slug, $project_name, $po
         $edit_link = "<a href='" . $GLOBALS['projects_edit_link'] . $record_id . "/' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
     }
 
-    $project_card = $project_card . "<tr><td>$project_description</td></tr>";
-    $project_card = $project_card . "<tr><td class='status_bar'>" . $status . "&nbsp;&nbsp;<strong>" . $portfolio_link . "</strong>&nbsp;&nbsp;" . $launch_date . "&nbsp;&nbsp;" . $edit_link . "</td></tr>";
+    $project_card = $project_card . "<p class='what'>$project_description</p>";
 
     //include link to project? used from list of projects
     if ($include_link == "yes") {
-        $link = "<tr><td colspan=2><h2><a href='" . $base_folder . $slug . "/?fresh=true'>" . $project_name . "</h2></td></tr>";
+        $link = "<a href='" . $base_folder . $slug . "/?fresh=true'><h2>" . $project_name . "</h2></a>";
         $project_card = $link . $project_card;
     } else {
-        $link = "<tr><td colspan=2><h1 class='entry-title'>" . $project_name . "</h1></td></tr>";
+        $link = "<h1 class='entry-title'>" . $project_name . "</h1>";
         $project_card = $link . $project_card;
     }
     //wrap in table
-    $project_card = "<table>" . $project_card . "</table>";
+    $project_card = $project_card;
 
 
     $portfolio_link = "<a href='/portfolios/$portfolio_slug/'>$portfolio</a>";
