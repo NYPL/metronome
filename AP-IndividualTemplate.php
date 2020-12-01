@@ -76,10 +76,10 @@
 
 
                     /// Links to code
-                    $not_available = "NA";
+                    $not_available = "N/A";
 
                     $T_Twig_Code = "Code " . $not_available;
-                    $T_Twig_Storybook = "Storybook " . $not_available;
+                    $T_Twig_Storybook = "Patternlab " . $not_available;
                     $T_React_Code = "Code " . $not_available;
                     $T_React_Storybook = "Storybook " . $not_available;
                     $T_Jira_Link = "";
