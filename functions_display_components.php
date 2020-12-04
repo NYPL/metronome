@@ -188,8 +188,8 @@ function return_display_item_header($type, $temp_title, $record_id, $description
     $header .= "<tr><td>$description</td></tr>";
     $header .= "<tr><td>$status_table</td></tr>";
 
-    $figma = display_ia_design($figma);
-    $header .= "<tr><td><strong>Design & Schematic</strong><br>" . $figma . "<br></td></tr>";
+    $figma = // display_ia_design($figma);
+    $header .= "<tr><td><strong>Design & Schematic</strong><br><a href='" . $figma . "'>".$figma."</a><br></td></tr>";
 
 
     if ($type == "Component") {
@@ -224,3 +224,53 @@ function return_project_item_row($t_link, $t_name, $t_description)
 
     return $t_row;
 }
+
+function getCacheFileLocation($cacheFileName) {
+    $themeDir = __DIR__;
+    
+    $dirPieces = explode('/themes/', $themeDir);
+    $contentRoot = $dirPieces[0];
+
+    $cacheDir = $contentRoot . '/airpress_cache';
+    
+    return $cacheDir . '/' . $cacheFileName;
+}
+
+function isCacheValid($cacheFileLocation) {
+
+    // clear cache on demand with query string var
+    
+    if(isset($_GET['fresh'])) {
+        unlink($cacheFileLocation);
+    }
+
+    $cacheCreatedTime = filemtime($cacheFileLocation);
+
+    $cacheExpires = 600;
+
+    return $cacheCreatedTime > (time() - $cacheExpires);
+
+}
+
+function loadCache($cacheFileLocation) {
+
+    $cacheCreatedTime = filemtime($cacheFileLocation);
+    
+    $offset = timezone_offset_get(new DateTimeZone('America/New_York'), new DateTime());
+    
+    $code = "<p style=\"display:block;float:right;\">Cached " . 
+        date("M j Y g:i:s a", $cacheCreatedTime + $offset) . 
+        " - <a href=\"" . $_SERVER['REQUEST_URI'] . '?fresh=true' . "\">Clear cache</a> </p>";
+    
+        $code .= file_get_contents($cacheFileLocation);
+    
+    return $code;
+
+}
+
+function writeCache($cacheFileLocation, $code) {
+    
+    file_put_contents($cacheFileLocation, $code);
+    echo "<p>Cache Written</p>";
+}
+

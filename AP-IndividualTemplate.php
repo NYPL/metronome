@@ -5,10 +5,10 @@
 <div id="main-content" class="main-content">
 
     <?php
-    if (is_front_page() && twentyfourteen_has_featured_posts()) {
-        // Include the featured content template.
-        get_template_part('featured-content');
-    }
+    // if (is_front_page() && twentyfourteen_has_featured_posts()) {
+    //     // Include the featured content template.
+    //     //get_template_part('featured-content');
+    // }
     ?>
 
 
@@ -27,6 +27,35 @@
 
     ?>
 
+    
+
+    <div id="primary" class="content-area">
+        <div id="content" class="site-content" role="main">
+            <article id="post-1" class="post-1 post type-post status-publish format-standard hentry category-uncategorized">
+
+                <header class="entry-header">
+
+                <?php
+
+    $cacheFileName = $passed_template;
+
+    $cacheFileLocation = getCacheFileLocation($cacheFileName);
+    
+    // clear cache on demand with query string var
+    if(isset($_GET['fresh'])) {
+        unlink($cacheFileLocation);
+    }
+
+    $cacheValid = isCacheValid($cacheFileLocation);
+    
+	if($cacheValid){
+        
+		echo loadCache($cacheFileLocation);
+    
+    } else {
+        // get new results from airtable
+    ?>
+
     <?php
 
     //////// GET TEMPLATE DETAILS
@@ -40,12 +69,6 @@
     $T_Record_ID = $templates[0]["Record ID"];
 
     ?>
-
-    <div id="primary" class="content-area">
-        <div id="content" class="site-content" role="main">
-            <article id="post-1" class="post-1 post type-post status-publish format-standard hentry category-uncategorized">
-
-                <header class="entry-header">
                     <?php
 
                     $simple = $templates[0];
@@ -92,7 +115,7 @@
                     $temp_header = return_display_item_header("Template", $t_title, $t_record_id, $t_description, $T_React_Storybook, $T_React_Code, $T_Twig_Storybook, $T_Twig_Code,  $C_Primary_Func_Specs, $T_Primary_Accessibility, $these_parameters, $T_Figma_Link);
 
 
-                    echo $temp_header;
+                    $code = $temp_header;
 
 
                     ?>
@@ -130,12 +153,12 @@
                             // display accessibility notes	
 
                             $T_Accessibility_Notes = make_markdown($e["Accessibility"]);
-                            echo "<br><span class='section_header'>Accessibility</span>" . $T_Accessibility_Notes;
+                            $code .= "<br><span class='section_header'>Accessibility</span>" . $T_Accessibility_Notes;
 
-                            echo "<br><strong>CHANGELOG:<br>" . make_markdown($T_changelog);
+                            $code .= "<br><strong>CHANGELOG:<br>" . make_markdown($T_changelog);
                         }
                     } else {
-                        echo "Template not found";
+                        $code .=  "Template not found";
                     }
 
                     //////// GET COMPONENTS 
@@ -157,14 +180,14 @@
                     // Header for Components
                     $Num_Components = count($components);
                     $add_a_component_link = "<a href='https://airtable.com/shrUc3dtBvnhfavnN?prefill_Template=" . $T_Name . "' target=new>" . $GLOBALS['icon_add'] . "</a>";
-                    echo "<h3>" . $Num_Components . " Component(s) Used " . $add_a_component_link . "</h3>";
+                    $code .= "<h3>" . $Num_Components . " Component(s) Used " . $add_a_component_link . "</h3>";
 
 
                     $base_folder_link = "/components/";
                     $base_edit_link = "https://airtable.com/tblYWtfeJcUcaW92U/viw8LSUoCBYaxOX1N/";
 
                     //////// DISPLAY COMPONENTS 
-                    echo "<table class='cleantable'>";
+                    $code .= "<table class='cleantable'>";
                     foreach ($components as $e) {
 
                         $number = $e["Order"];
@@ -201,19 +224,24 @@
 
                         $test = return_placed_component_details("Template", $C_to_T_Record_ID, $C_Record_ID, $number, $C_Manual_or_Auto, $C_Placement_Des, $Page_Rules, $C_Name, $C_Slug, $C_Description, $C_Accessibility, $C_Func_Specs, $these_parameters, $optional);
 
-                        echo $test;
+                        $code .= $test;
                     }
-                    echo "</table>";
+                    $code .= "</table>";
 
                     // NOTES ON USAGE
-                    echo "<hr>";
-                    echo "<span class='themsthebreaks'>" . $T_Used_In_Projects . "</span>";
-
+                    $code .= "<hr>";
+                    $code .= "<span class='themsthebreaks'>" . $T_Used_In_Projects . "</span>";
+                    echo $code;
+                    
                     ?>
 
 
                 </div>
             </article>
+            <?php
+                writeCache($cacheFileLocation, $code);
+            } // end if cache not valid
+            ?>
         </div><!-- #content -->
     </div><!-- #primary -->
     <?php get_sidebar('content'); ?>

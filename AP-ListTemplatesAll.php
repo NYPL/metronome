@@ -5,10 +5,10 @@
 <div id="main-content" class="main-content">
 
     <?php
-    if (is_front_page() && twentyfourteen_has_featured_posts()) {
-        // Include the featured content template.
-        get_template_part('featured-content');
-    }
+    // if (is_front_page() && twentyfourteen_has_featured_posts()) {
+    //     // Include the featured content template.
+    //     get_template_part('featured-content');
+    // }
     ?>
     <div id="primary" class="content-area">
         <div id="content" class="site-content" role="main">
@@ -33,6 +33,18 @@
 
                     <?php
 
+                $cacheFileName = 'alltemplates';
+
+                $cacheFileLocation = getCacheFileLocation($cacheFileName);
+
+                $cacheValid = isCacheValid($cacheFileLocation);
+
+                if($cacheValid){
+                    
+                    echo loadCache($cacheFileLocation);
+
+                } else {
+
                     //////// GET TEMPLATES
                     // usage: AirPressQuery($tableName, CONFIG_ID or CONFIG_NAME)
                     $query = new AirpressQuery("Templates", CONFIG_NAME);
@@ -45,9 +57,9 @@
 
                     if (!is_airpress_empty($templates)) {
                         $num_templates = count($templates);
-                        echo "<h2>" . $num_templates . " Template(s)</h2>";
+                        $code = "<h2>" . $num_templates . " Template(s)</h2>";
 
-                        echo "<table>";
+                        $code .= "<table>";
 
                         $templates_display = "";
                         foreach ($templates as $e) {
@@ -56,7 +68,7 @@
                             $T_Description = $e["Template Description"];
                             $T_Open_Issues = $e["Open Issues"];
 
-                            $T_View_Link = $GLOBALS['templates_base_folder'] . $e["Slug"] . "/?fresh=true";
+                            $T_View_Link = $GLOBALS['templates_base_folder'] . $e["Slug"] . "/";
                             //$T_View_Link="<a href='".$T_View_Link."' target='new'>".$e["Template Name"]."</a>";
 
                             $T_Edit_Link = $GLOBALS['templates_edit_link'] . $T_Record_ID . "?blocks=hide";
@@ -75,20 +87,21 @@
 
                             $templates_display .= return_project_item_row($T_View_Link, $T_Name, $IA_Status, $Design_Status, $Accessibility_Status, $Design_Tech_Status, $Overall_Status, $T_Edit_Link, $T_Description);
                         }
-                        echo $templates_display;
-                        echo "</table>";
+                        $code .= $templates_display;
+                        $code .= "</table>";
                     } else {
-                        echo "There are no templates";
+                        $code .= "There are no templates";
                     }
-
-
-
+                        echo $code;
+                        writeCache($cacheFileLocation, $code);
+                    } // end if cache not valid
                     ?>
 
 
 
                 </div>
             </article>
+            
         </div><!-- #content -->
     </div><!-- #primary -->
     <?php get_sidebar('content'); ?>
