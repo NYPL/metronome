@@ -233,6 +233,8 @@ function getCacheFileLocation($cacheFileName) {
 
     $cacheDir = $contentRoot . '/airpress_cache';
     
+    $cacheFileName = str_replace('/','', $cacheFileName);
+
     return $cacheDir . '/' . $cacheFileName;
 }
 
@@ -246,7 +248,7 @@ function isCacheValid($cacheFileLocation) {
 
     $cacheCreatedTime = filemtime($cacheFileLocation);
 
-    $cacheExpires = 600;
+    $cacheExpires = 3600;
 
     return $cacheCreatedTime > (time() - $cacheExpires);
 
