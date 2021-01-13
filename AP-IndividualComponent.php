@@ -130,7 +130,7 @@
                             foreach ($used_in_templates as $e) {
                                 $T_Name = $e["Template"][0]["Template Name"];
                                 $T_Slug = $e["Template"][0]["Slug"];
-                                $T_link = "<a href='" . $GLOBALS['templates_base_folder'] . $T_Slug . "/?fresh=true'>$T_Name</a>";
+                                $T_link = "<a href='" . $GLOBALS['templates_base_folder'] . $T_Slug . "/'>$T_Name</a>";
                                 $C_Used_In_Templates .= $T_link . " | ";
                             }
                         }
@@ -153,7 +153,7 @@
                                 $T_Name = $e["Container Component"][0]["Component Name"];
                                 $T_Slug = $e["Container Component"][0]["Slug"];
 
-                                $T_link = "<a href=" . $GLOBALS['components_base_folder'] . $T_Slug . "/?fresh=true>$T_Name</a>";
+                                $T_link = "<a href=" . $GLOBALS['components_base_folder'] . $T_Slug . "/>$T_Name</a>";
                                 if (!in_array($T_link, $C_Used_In_Components_Array)) {
                                     $C_Used_In_Components_Array[] = $T_link;
                                 }
@@ -344,7 +344,6 @@
             </article>
         </div><!-- #content -->
     </div><!-- #primary -->
-    <?php get_sidebar('content'); ?>
 </div><!-- #main-content -->
 
 <?php

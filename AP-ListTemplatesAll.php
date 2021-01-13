@@ -41,7 +41,7 @@
 
                 if($cacheValid){
                     
-                    echo loadCache($cacheFileLocation);
+                    echo readCache($cacheFileLocation);
 
                 } else {
 

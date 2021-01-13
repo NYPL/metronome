@@ -53,7 +53,7 @@
                             //base type
                             $C_Base_Type = $e["Base Type"];
                             //links
-                            $C_View_Link = $GLOBALS['components_base_folder'] . $e["Slug"] . "/?fresh=true'";
+                            $C_View_Link = $GLOBALS['components_base_folder'] . $e["Slug"] . "/";
                             $C_Record_ID = $e["Record ID"];
                             $C_Edit_Link = $GLOBALS['components_edit_link'] . $C_Record_ID . "?blocks=hide";
                             $C_Edit_Link = "<a href='" . $C_Edit_Link . "' target='new'>" . $GLOBALS['icon_edit'] . "</a>";

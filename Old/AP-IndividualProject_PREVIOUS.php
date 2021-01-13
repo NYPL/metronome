@@ -13,15 +13,9 @@ if ( is_front_page() && twentyfourteen_has_featured_posts() ) {
 	
 	
 <?php
-// Set variables
-	// link to MVP edit form
-	$base_edit_link="https://airtable.com/tblN4ml1RFKA5dEKZ/viwXTL0bK4Oys5sJS/";
 	//Get Project 
-	$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 
-                "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  
-                $_SERVER['REQUEST_URI']; 
-			$passed_project = array_slice(explode('/', $url), -2)[0];
-
+	$passed_project=$_GET['slug'];
+	//$passed_project='research-now';
 	
 //Get Project Details
 $query = new AirpressQuery();
@@ -34,7 +28,6 @@ $this_project=$projects[0];
 $this_project_name=$this_project["Project Name"];	
 	
 //Get Templates from "Templates to Projects LookUp" 
-// ISUES: Data below is wonky - can't get populate by related field to work corretly. Right now working wrounf this by creating "fake" duplicate fields which copy the data in a formula.
 $query2 = new AirpressQuery();
 $query2->setConfig("NYPLdoc1");
 $query2->table("Templates to Projects LookUp");
@@ -52,34 +45,27 @@ $num_templates= count($templates_used);
 		<div id="content" class="site-content" role="main">
 <article id="post-1" class="post-1 post type-post status-publish format-standard hentry category-uncategorized">
 	
-	
 	<header class="entry-header">
 		<h1 class="entry-title"><?php  echo $this_project["Project Name"]; ?></h1>
 		<!-- .entry-meta -->
 	</header><!-- .entry-header -->
 	
-		<div class="entry-content">	
+		<div class="entry-content">
+	<?php echo "Passed Project :".$passed_project."<br>"; ?>
 			
-			
-	<?php 
-			
-	?>
-			
-			
-			<strong>Project State:</strong>: <?php  echo $this_project["Project State"]; ?> <br>
-			<strong>Project Description:</strong><br><span class="themsthebreaks"><?php  echo $this_project["Project Description"]; ?> </span><br>
+			Project State 1: <?php  echo $this_project["Project State"]; ?> <br>
+			Project Description: <span class="themsthebreaks"><?php  echo $this_project["Project Description"]; ?> </span><br>
 
 			<?php
-				echo "<br><br><hr><h2>".$num_templates." template(s) used</h2><br>";
+				echo "<b>".$num_templates." templates used</b><br>";
 foreach($templates_used as $e){
-	//ISSUE: This is not done wellTemplate Slug Temp
-	//http://themetronome.co/projects/research-now/?slug=research-now&fresh=true
-	echo "<h3><a href='/templates/".$e['Template Slug Temp']."/'>".$e['Template Temp']."</a></h2><br>";
-	echo "<strong>Description</strong> ".$e['Template Description'][0];
-	
-	//echo "<br>Template[0] ".$e['Template'][0][0];
-	//echo "<br><strong>Notes</strong> ".$e['Notes'];
-	echo "<br><hr>";
+	//print_r($templates_used[0]);
+	//echo "<br>Template ".$e['Template'];
+	echo "<br>Template[0] ".$e['Template'][0][0];
+	echo "<br><strong>Template Temp</strong>".$e['Template Temp'];
+	echo "<br><strong>Notes</strong> ".$e['Notes'];
+	echo "<br><strong>Description</strong> ".$e['Template Description'][0];
+	echo "<hr>";
 }
 			?>
 	

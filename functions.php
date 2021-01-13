@@ -196,7 +196,7 @@ function return_project_card($card_wrap, $base_folder, $slug, $project_name, $po
 
     //include link to project? used from list of projects
     if ($include_link == "yes") {
-        $link = "<a href='" . $base_folder . $slug . "/?fresh=true'><h2>" . $project_name . "</h2></a>";
+        $link = "<a href='" . $base_folder . $slug . "/'><h2>" . $project_name . "</h2></a>";
         $project_card = $link . $project_card;
     } else {
         $link = "<h1 class='entry-title'>" . $project_name . "</h1>";
@@ -238,7 +238,7 @@ function return_portfolio_card($card_wrap, $include_link, $base_folder, $slug, $
 
     //include title?
     if ($include_link == "yes") {
-        $link = "<tr><td colspan=2><h2><a href='" . $base_folder . $slug . "/?fresh=true'>" . $prefix . ": " . $portfolio_name . "</h2></td></tr>";
+        $link = "<tr><td colspan=2><h2><a href='" . $base_folder . $slug . "/'>" . $prefix . ": " . $portfolio_name . "</h2></td></tr>";
         $portfolio_card = $link . $portfolio_card;
     }
 

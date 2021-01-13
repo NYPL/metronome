@@ -8,7 +8,7 @@ function return_placed_component_details($placed_in, $placement_id, $record_id, 
     $accessibility = make_markdown($accessibility);
     $functional_specs = make_markdown($functional_specs);
 
-    $temp_view_Link = $GLOBALS['components_base_folder'] . $C_Slug . "/?fresh=true";
+    $temp_view_Link = $GLOBALS['components_base_folder'] . $C_Slug . "/";
     $temp_view_Link = "<a href='" . $temp_view_Link . "'>" . $component_name . "</a>";
 
     $temp_edit_Link = "<a href='" . $GLOBALS['components_edit_link'] . $record_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
@@ -48,7 +48,7 @@ function return_placed_component_details($placed_in, $placement_id, $record_id, 
         $CP_Placement = $placed["Placement Description"];
 
 
-        $CP_view_Link = $GLOBALS['components_base_folder'] . $CP_Slug . "/?fresh=true";
+        $CP_view_Link = $GLOBALS['components_base_folder'] . $CP_Slug . "/";
         $CP_view_Link = $CP_Placement . " -  <a href='" . $CP_view_Link . "'>" . $CP_Name . "</a>";
 
         $my_placed_components .= $CP_view_Link . " | ";
@@ -226,9 +226,11 @@ function return_project_item_row($t_link, $t_name, $t_description)
 }
 
 function getCacheFileLocation($cacheFileName) {
+    
     $themeDir = __DIR__;
     
     $dirPieces = explode('/themes/', $themeDir);
+    
     $contentRoot = $dirPieces[0];
 
     $cacheDir = $contentRoot . '/airpress_cache';
@@ -254,7 +256,7 @@ function isCacheValid($cacheFileLocation) {
 
 }
 
-function loadCache($cacheFileLocation) {
+function readCache($cacheFileLocation) {
 
     $cacheCreatedTime = filemtime($cacheFileLocation);
     
@@ -262,9 +264,9 @@ function loadCache($cacheFileLocation) {
     
     $code = "<p style=\"display:block;float:right;\">Cached " . 
         date("M j Y g:i:s a", $cacheCreatedTime + $offset) . 
-        " - <a href=\"" . $_SERVER['REQUEST_URI'] . '?fresh=true' . "\">Clear cache</a> </p>";
+        " - <a href=\"" . $_SERVER['REQUEST_URI'] . '' . "\">Clear cache</a> </p>";
     
-        $code .= file_get_contents($cacheFileLocation);
+    $code .= file_get_contents($cacheFileLocation);
     
     return $code;
 
@@ -273,6 +275,7 @@ function loadCache($cacheFileLocation) {
 function writeCache($cacheFileLocation, $code) {
     
     file_put_contents($cacheFileLocation, $code);
+    
     echo "<p>Cache Written</p>";
 }
 

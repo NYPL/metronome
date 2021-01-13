@@ -2,7 +2,7 @@
 
 // $base_url="http://themetronome.co";
 //STAGING
-$base_url = "http://themetronome.co/staging/7511";
+$base_url = "http://themetronome.co";
 
 
 $GLOBALS['config_name'] = "NYPLdoc2";

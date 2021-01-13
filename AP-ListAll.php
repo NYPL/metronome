@@ -63,7 +63,7 @@ if(! is_airpress_empty($templates)){
 		$T_Record_ID=$e["Record ID"];
 		$T_Name=$e["Template Name"];
 		
-		$T_View_Link=$base_folder_link.$e["Slug"]."/?fresh=true";
+		$T_View_Link=$base_folder_link.$e["Slug"]."/";
 		$T_View_Link="<a href='".$T_View_Link."'>".$e["Template Name"]."/</a>";
 
 		$IA_Status=$e["IA"][0]["Name"];
@@ -80,7 +80,7 @@ if(! is_airpress_empty($templates)){
 			echo "<td>".$Design_Status."</td>";
 			echo "<td>".$Design_Tech_Status."</td>";
 		echo "</tr>";
-		
+	}
 	echo "</table>";
 			
 }else{
