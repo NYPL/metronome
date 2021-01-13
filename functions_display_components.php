@@ -264,7 +264,7 @@ function readCache($cacheFileLocation) {
     
     $code = "<p style=\"display:block;float:right;\">Cached " . 
         date("M j Y g:i:s a", $cacheCreatedTime + $offset) . 
-        " - <a href=\"" . $_SERVER['REQUEST_URI'] . '' . "\">Clear cache</a> </p>";
+        " - <a href=\"" . $_SERVER['REQUEST_URI'] . '?fresh=true' . "\">Clear cache</a> </p>";
     
     $code .= file_get_contents($cacheFileLocation);
     
