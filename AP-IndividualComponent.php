@@ -35,7 +35,7 @@
     $components = new AirpressCollection($query);
 
 
-    $C_Record_ID = $components[0]["Record ID"];
+    $C_Record_ID = $components[0]->record_id();
 
     $C_Description = $components[0]["Component Description"];
     $C_Primary_Func_Specs = $components[0]["Functional Specs"];

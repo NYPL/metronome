@@ -15,9 +15,9 @@ function return_placed_component_details($placed_in, $placement_id, $record_id, 
 
     //eiting placement details
     if ($placed_in == "Component") {
-        $placed_component_edit_link = "<a href='" . $GLOBALS['placed_c_in_c_edit_link'] . $placement_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
+        $placed_component_edit_link = "<a href='" . $GLOBALS['placed_c_in_c_edit_link'] . $placement_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "Edit</a>";
     } else {
-        $placed_component_edit_link = "<a href='" . $GLOBALS['templates_rule_and_details_edit_link'] . $placement_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
+        $placed_component_edit_link = "<a href='" . $GLOBALS['templates_rule_and_details_edit_link'] . $placement_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "Edit</a>";
     }
 
 
@@ -72,7 +72,7 @@ function return_placed_component_details($placed_in, $placement_id, $record_id, 
 
 
     // link to edit parameters and details
-    $edit_all_para_and_details = "<a href='" . $GLOBALS['components_parameters_and_details_edit_link'] . $record_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
+    $edit_all_para_and_details = "<a href='" . $GLOBALS['components_parameters_and_details_edit_link'] . $record_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "Edit Icon</a>";
 
     $return_this .= "<tr><td>&nbsp;</td><td>&nbsp;</td><td><span class='section_header'>Functional Specs</span>" . $functional_specs . "<br><span class='section_header'>Accessibility</span>" . $accessibility . "</td></tr>";
 
@@ -179,17 +179,19 @@ function return_display_item_header($type, $temp_title, $record_id, $description
         $temp_edit_Link = $GLOBALS['templates_edit_link'];
     }
 
-    $temp_edit_Link = "<a href='" . $temp_edit_Link . $record_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
+    $temp_edit_Link = "<a href='" . $temp_edit_Link . $record_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "Edit </a>";
 
     // link to edit parameters and details (not shown for template)
     $edit_all_para_and_details = "<a href='" . $GLOBALS['components_parameters_and_details_edit_link'] . $record_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
 
-    $header .= "<tr><td><h1 class='entry-title'>$temp_title </h1></td></tr>";
+    $header .= "<tr><td><h1 class='entry-title'>$temp_title </h1> $temp_edit_Link</td></tr>";
     $header .= "<tr><td>$description</td></tr>";
     $header .= "<tr><td>$status_table</td></tr>";
+    $header .= "<tr><td></td></tr>";
 
-    $figma = // display_ia_design($figma);
-    $header .= "<tr><td><strong>Design & Schematic</strong><br><a href='" . $figma . "'>".$figma."</a><br></td></tr>";
+    $figmaLink = $figma;
+    $figmaIframe = display_ia_design($figma);
+    $header .= "<tr><td><strong>Design & Schematic</strong>" . $figmaIframe . "<br><a href='" . $figma . "'>".$figma."</a><br><br><br></td></tr>";
 
 
     if ($type == "Component") {

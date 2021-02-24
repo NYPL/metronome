@@ -68,7 +68,7 @@
                             $T_Description = $e["Template Description"];
                             $T_Open_Issues = $e["Open Issues"];
 
-                            $T_View_Link = $GLOBALS['templates_base_folder'] . $e["Slug"] . "/";
+                            $T_View_Link = $GLOBALS['templates_base_folder'] . urlencode($e["Slug"]) . "/";
                             //$T_View_Link="<a href='".$T_View_Link."' target='new'>".$e["Template Name"]."</a>";
 
                             $T_Edit_Link = $GLOBALS['templates_edit_link'] . $T_Record_ID . "?blocks=hide";

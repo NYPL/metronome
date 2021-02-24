@@ -27,7 +27,7 @@
 
     ?>
 
-    
+
 
     <div id="primary" class="content-area">
         <div id="content" class="site-content" role="main">
@@ -40,18 +40,18 @@
     $cacheFileName = $passed_template;
 
     $cacheFileLocation = getCacheFileLocation($cacheFileName);
-    
+
     // clear cache on demand with query string var
     if(isset($_GET['fresh'])) {
         unlink($cacheFileLocation);
     }
 
     $cacheValid = isCacheValid($cacheFileLocation);
-    
+
 	if($cacheValid){
-        
+
 		echo readCache($cacheFileLocation);
-    
+
     } else {
         // get new results from airtable
     ?>
@@ -74,9 +74,12 @@
                     $simple = $templates[0];
 
                     $t_title = $simple["Template Name"];
-                    $t_record_id = $simple["Record ID"];
+                    $t_record_id = $simple->record_id();
 
+                    //file_put_contents();
+                    //var_dump($simple);
                     $T_Figma_Link = $simple["Figma Link"];
+                    $T_Primary_Accessibility = $simple["Accessibility Details"];
                     $T_Projects = $simple["Associated Projects"][0]["Project Name"];
                     $T_Project_slug = $simple["Associated Projects"][0]["Slug"];
                     $T_Epics = $simple["Associated Epics"][0]["Epic Name"];
@@ -150,9 +153,9 @@
                             $query_oi->sort("Date Created", "asc");
                             $T_Open_Issues = new AirpressCollection($query_oi);
 
-                            // display accessibility notes	
+                            // display accessibility notes
 
-                            $T_Accessibility_Notes = make_markdown($e["Accessibility"]);
+                            $T_Accessibility_Notes = make_markdown($e["Accessibility Details"]);
                             $code .= "<br><span class='section_header'>Accessibility</span>" . $T_Accessibility_Notes;
 
                             $code .= "<br><strong>CHANGELOG:<br>" . make_markdown($T_changelog);
@@ -161,8 +164,8 @@
                         $code .=  "Template not found";
                     }
 
-                    //////// GET COMPONENTS 
-                    /// Get component from lookup table 
+                    //////// GET COMPONENTS
+                    /// Get component from lookup table
                     // usage: AirPressQuery($tableName, CONFIG_ID or CONFIG_NAME)
                     $query = new AirpressQuery("Template Placement Requirements", CONFIG_NAME);
                     $query->filterByFormula("{Template}='$T_Name'");
@@ -184,21 +187,27 @@
 
 
                     $base_folder_link = "/components/";
-                    $base_edit_link = "https://airtable.com/tblYWtfeJcUcaW92U/viw8LSUoCBYaxOX1N/";
+                    $base_edit_link = "https://airtable.com/tblYWtfeJcUcaW92U/viw8LSUoCBYaxOX1N/reczreTyXdQlxjZR7";
 
-                    //////// DISPLAY COMPONENTS 
+                    //////// DISPLAY COMPONENTS
                     $code .= "<table class='cleantable'>";
                     foreach ($components as $e) {
 
                         $number = $e["Order"];
+                        //var_dump($e);
                         $C_Description = $e["Placed Component"][0]["Component Description"];
                         $C_Accessibility = $e["Placed Component"][0]["Accessibility Details"];
                         $C_Func_Specs = $e["Placed Component"][0]["Functional Specs"];
 
 
                         //Note this is the connection between the template and the componenet, not the Record ID for the component itself which is set and used later
+                        //echo "<pre>";
+                        //var_dump($e["Placed Component"][0]->record_id());
+                        $componentAsArray = $e->toArray();
                         $C_to_T_Record_ID = $e["Record ID"];
-                        $C_Record_ID = $e["Placed Component"][0]["Record ID"];
+                        //echo __DIR__;
+                        file_put_contents(__DIR__.'/log/log.txt',print_r($e->toArray(),1));
+                        $C_Record_ID = $componentAsArray["id"];
                         $number = $e["Order"];
                         $C_Manual_or_Auto = return_page_placement_type("Auto");
 
@@ -222,7 +231,7 @@
                         $these_parameters = return_my_parameters($e["Placed Component"][0]);
                         $optional = $e["Optional or Required"];
 
-                        $test = return_placed_component_details("Template", $C_to_T_Record_ID, $C_Record_ID, $number, $C_Manual_or_Auto, $C_Placement_Des, $Page_Rules, $C_Name, $C_Slug, $C_Description, $C_Accessibility, $C_Func_Specs, $these_parameters, $optional);
+                        $test = return_placed_component_details("Component", $C_to_T_Record_ID, $C_Record_ID, $number, $C_Manual_or_Auto, $C_Placement_Des, $Page_Rules, $C_Name, $C_Slug, $C_Description, $C_Accessibility, $C_Func_Specs, $these_parameters, $optional);
 
                         $code .= $test;
                     }
@@ -232,7 +241,7 @@
                     $code .= "<hr>";
                     $code .= "<span class='themsthebreaks'>" . $T_Used_In_Projects . "</span>";
                     echo $code;
-                    
+
                     ?>
 
 
