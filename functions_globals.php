@@ -22,9 +22,9 @@ $GLOBALS['open_issues_base_folder'] = $base_url . "/projectopenissues/";
 //// TEMPLATES ////
 $GLOBALS['templates_base_folder'] = $base_url . "/templates/";
 // link to open specific template in airtable for editing, uses Record_ID
-$GLOBALS['templates_edit_link'] = "https://airtable.com/tblGIB5X8gZldcAWl/viwoJXKuyE0EkP1SR/";
+$GLOBALS['templates_edit_link'] = "https://airtable.com/tblvQubKgJPJ8t5Eq/viwYeXf3D0tRY6Zg7/";
 // link to just edit rules and details
-$GLOBALS['templates_rule_and_details_edit_link'] = "https://airtable.com/tblGIB5X8gZldcAWl/viwoJXKuyE0EkP1SR/";
+$GLOBALS['templates_rule_and_details_edit_link'] = "https://airtable.com/tblvQubKgJPJ8t5Eq/viwYeXf3D0tRY6Zg7/";
 
 //// COMPONENTS ////
 $GLOBALS['components_base_folder'] = $base_url . "/components/";
@@ -35,7 +35,7 @@ $GLOBALS['components_parameters_and_details_edit_link'] = "https://airtable.com/
 
 // edit a PLACED component
 // Component to Component
-$GLOBALS['placed_c_in_c_edit_link'] = "https://airtable.com/tblUQUA6r9AahQ73M/viwBqXLDj32N7byms/";
+$GLOBALS['placed_c_in_c_edit_link'] = "https://airtable.com/tblGIB5X8gZldcAWl/viwoJXKuyE0EkP1SR/";
 // Component to Template
 $GLOBALS['placed_c_in_t_edit_link'] = "https://airtable.com/tblMjqo18EsRTCDFP/viwtTtzy0yUuJX4Yv/";
 

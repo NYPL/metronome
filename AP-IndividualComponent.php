@@ -136,7 +136,7 @@
                         }
                     }
 
-                    //////// WHAT COMPONENTS AM I USED IN?	
+                    //////// WHAT COMPONENTS AM I USED IN?
                     // usage: AirPressQuery($tableName, CONFIG_ID or CONFIG_NAME)
                     $query3 = new AirpressQuery("Component to Component LookUp", CONFIG_NAME);
                     $query3->filterByFormula("{Placed Component}='$temp_title'");
@@ -220,8 +220,8 @@
                         echo "No Details Found";
                     }
 
-                    //////// GET PLACED COMPONENTS 
-                    /// Get component from lookup table 
+                    //////// GET PLACED COMPONENTS
+                    /// Get component from lookup table
                     // usage: AirPressQuery($tableName, CONFIG_ID or CONFIG_NAME)
                     $query = new AirpressQuery("Component to Component LookUp", CONFIG_NAME);
                     $query->filterByFormula("{Container Component}='$C_Name'");
@@ -247,12 +247,13 @@
                     $base_folder_link = "/components/";
                     $base_edit_link = "https://airtable.com/tblYWtfeJcUcaW92U/viw8LSUoCBYaxOX1N/";
 
-                    //////// DISPLAY COMPONENTS 
+                    //////// DISPLAY COMPONENTS
                     if ($Num_Components > 0) {
                         echo "<table class='cleantable'>";
 
                         foreach ($placed_components as $e) {
                             // Get attibutes based on my type
+                            $componentAsArray = $e->toArray();
                             $basetype = $e["Placed Component"][0]["Base Type"];
                             $attr_lu = $e["C_T_ID"];
                             $basedetails = "<span class='urgent_message'>Component doesn't have a type assigned</span>";
@@ -289,7 +290,7 @@
                                 }
                             }
 
-                            $placement_id = $e["Placed Component"][0]["Record ID"];
+                            $placement_id = $componentAsArray["fields"]["Placed Component"][0]["id"];;
                             $Placement_Description = $e["Placement Description"];
                             $Placement_Rules = $e["Placement Rules"];
 
@@ -311,7 +312,7 @@
                             $C_Optional = $e["Optional"];
 
                             $these_parameters = return_my_parameters($e["Placed Component"][0]);
-                            $these_details = return_placed_component_details("Component", $e["Record ID"], $placement_id, $e["Order"], $C_Manual_or_Auto, $Placement_Description, $Placement_Rules, $C_Name, $C_Slug, $component_description, $C_Sub_Accessibility, $C_Sub_Func_Specs, $these_parameters, $C_Optional);
+                            $these_details = return_placed_component_details("Component", $placement_id, $placement_id, $e["Order"], $C_Manual_or_Auto, $Placement_Description, $Placement_Rules, $C_Name, $C_Slug, $component_description, $C_Sub_Accessibility, $C_Sub_Func_Specs, $these_parameters, $C_Optional);
 
                             //echo $these_details;
                             echo $these_details;

@@ -204,9 +204,9 @@
                         //echo "<pre>";
                         //var_dump($e["Placed Component"][0]->record_id());
                         $componentAsArray = $e->toArray();
-                        $C_to_T_Record_ID = $e["Record ID"];
+                        $C_to_T_Record_ID = $componentAsArray["fields"]["Placed Component"][0]["id"];
                         //echo __DIR__;
-                        file_put_contents(__DIR__.'/log/log.txt',print_r($e->toArray(),1));
+                        //file_put_contents(__DIR__.'/log/log.txt',print_r($e->toArray(),1));
                         $C_Record_ID = $componentAsArray["id"];
                         $number = $e["Order"];
                         $C_Manual_or_Auto = return_page_placement_type("Auto");
