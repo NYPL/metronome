@@ -290,7 +290,7 @@
                                 }
                             }
 
-                            $placement_id = $componentAsArray["fields"]["Placed Component"][0]["id"];;
+                            $placement_id = $componentAsArray["fields"]["Placed Component"][0]["id"];
                             $Placement_Description = $e["Placement Description"];
                             $Placement_Rules = $e["Placement Rules"];
 
