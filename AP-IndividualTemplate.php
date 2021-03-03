@@ -100,7 +100,7 @@
                     $t_description =
                         "<strong>" . $simple["Slug"] .
                         ", Version: " . $T_version . "</strong><br>" .
-                        $simple["Template Description"] . "<p class='aslkdjfkd'>" .
+                        make_markdown($simple["Template Description"]) . "<p class='aslkdjfkd'>" .
                         $t_project_string .
                         $t_epic_string .
                         "</p>";
