@@ -201,10 +201,10 @@
 
 
                         //Note this is the connection between the template and the componenet, not the Record ID for the component itself which is set and used later
-                        //echo "<pre>";
+                        // echo "<pre>";
                         //var_dump($e["Placed Component"][0]->record_id());
                         $componentAsArray = $e->toArray();
-                        $C_to_T_Record_ID = $componentAsArray["fields"]["Placed Component"][0]["id"];
+                        $C_to_T_Record_ID = $componentAsArray["id"];
                         //echo __DIR__;
                         //file_put_contents(__DIR__.'/log/log.txt',print_r($e->toArray(),1));
                         $C_Record_ID = $componentAsArray["id"];
@@ -213,7 +213,7 @@
 
                         $C_Placement_Des = $e["Placement Description"];
                         $Page_Rules = $e["Page Rules & Details"];
-
+                        // echo "</pre>";
 
                         $IA_Status = $e["Placed Component"][0]["IA"][0]["Name"];
                         $Design_Status = $e["Placed Component"][0]["Design"][0]["Name"];

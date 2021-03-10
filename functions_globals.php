@@ -37,7 +37,7 @@ $GLOBALS['components_parameters_and_details_edit_link'] = "https://airtable.com/
 // Component to Component
 $GLOBALS['placed_c_in_c_edit_link'] = "https://airtable.com/tblGIB5X8gZldcAWl/viwoJXKuyE0EkP1SR/";
 // Component to Template
-$GLOBALS['placed_c_in_t_edit_link'] = "https://airtable.com/tblMjqo18EsRTCDFP/viwtTtzy0yUuJX4Yv/";
+$GLOBALS['placed_c_in_t_edit_link'] = "https://airtable.com/tblu5yeKxIx0WS4zg/viwczcdxntkYLk5kU/";
 
 
 //// PORTFOLIOS ////

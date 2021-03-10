@@ -15,7 +15,7 @@ function return_placed_component_details($placed_in, $placement_id, $record_id, 
 
     //eiting placement details
     if ($placed_in == "Component") {
-        $placed_component_edit_link = "<a href='" . $GLOBALS['placed_c_in_c_edit_link'] . $placement_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "Edit</a>";
+        $placed_component_edit_link = "<a href='" . $GLOBALS['placed_c_in_t_edit_link'] . $placement_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "Edit</a>";
     } else {
         $placed_component_edit_link = "<a href='" . $GLOBALS['templates_rule_and_details_edit_link'] . $placement_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "Edit</a>";
     }
