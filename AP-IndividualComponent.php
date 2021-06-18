@@ -51,39 +51,39 @@
     $WIP = $components[0]["Work in Process"];
 
     $component_description =
-        "<strong>Deprecated:</strong> " . $deprecated_bool . "<br>" .
-        "<strong>Version Number:</strong> " . $version . "<br><p>" .
-        "<strong>Work in Progress:</strong> " . $WIP . "<br><p>" .
-        $C_Description . "</p>";
+        "<strong>Deprecated:</strong> " . $deprecated_bool . "</p>" .
+        "<p><strong>Version Number:</strong> " . $version . "</p>" .
+        "<p><strong>Work in Progress:</strong> " . $WIP . "</p>" .
+        "<p>" . $C_Description . "</p>";
 
     /// Links to code
-    $not_available = ": N/A";
+    $not_available = "<em>not yet available</em>";
 
-    $C_Twig_Code = "";
     if (!empty($components[0]["Twig Code Link"])) {
         $C_Twig_Code = "<a href='" . $components[0]["Twig Code Link"] . "' target='new'><strong>Code</strong></a>";
     } else {
-        $C_Twig_Code = "Code" . $not_available;
+        $C_Twig_Code = $not_available;
     }
-    $React_Code = "Code" . $not_available;
+
     if (!empty($components[0]["React Code Link"])) {
         $React_Code = "<a href='" . $components[0]["React Code Link"] . "' target='new'><strong>Code</strong></a>";
+    } else {
+        $React_Code = $not_available;
     }
-    $C_Twig_Storybook = "PatternLab";
+
     if (!empty($components[0]["PatternLab Embed Link"])) {
-        $C_Twig_Storybook = "<a href='" . $components[0]["PatternLab Embed Link"] . "' target='new'><strong>PatternLab</strong></a>";
+        $C_Twig_Storybook = "<a href='" . $components[0]["PatternLab Embed Link"] . "' target='new'><strong>Pattern Lab</strong></a>";
     } else {
-        $C_Twig_Code = "PatternLab" . $not_available;
+        $C_Twig_Storybook = $not_available;
     }
-    $C_React_Storybook = "Storybook";
+    
     if (!empty($components[0]["Storybook Embed Link"])) {
-        $C_React_Storybook = "<a href='" . $components[0]["Storybook Embed Link"] . "' target='new'><strong> Storybook</strong></a>";
+        $C_React_Storybook = "<a href='" . $components[0]["Storybook Embed Link"] . "' target='new'><strong>Storybook</strong></a>";
     } else {
-        $C_React_Storybook = "Storybook" . $not_available;
+        $C_React_Storybook = $not_available;
     }
 
     $these_parameters = return_my_parameters($components[0]);
-
     ?>
 
     <div id="primary" class="content-area">
@@ -97,7 +97,7 @@
 
                     $temp_header = return_display_item_header("Component", $temp_title, $C_Record_ID, $component_description, $C_React_Storybook, $React_Code, $C_Twig_Storybook, $C_Twig_Code, $C_Primary_Func_Specs, $C_Primary_Accessibility, " ", $C_Figma_Link);
                     echo $temp_header;
-                    echo "<br>" . make_markdown($changelog);
+                    echo make_markdown($changelog);
                     ?>
                     <!-- .entry-meta -->
                 </header><!-- .entry-header -->

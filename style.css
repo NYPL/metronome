@@ -105,13 +105,17 @@ ul.gapped li:not(:first-child) {
   margin-top: 16px;
 }
 
+hr {
+  margin: 24px 0;
+}
+
 /********* PLUGINS *********/
 .markdown {
   margin: 0px;
   padding: 0px;
 }
 .markdown p {
-  margin-bottom: 0px;
+  margin-bottom: 16px;
 }
 
 /********* ADD ONS *********/
