@@ -2,7 +2,15 @@
 
 // $base_url="http://themetronome.co";
 //STAGING
-$base_url = "http://themetronome.co";
+// $base_url = "http://themetronome.co";
+$server_port = $_SERVER['SERVER_PORT'];
+$server_name = $_SERVER['SERVER_NAME'];
+
+if ($server_port) :
+    $base_url = "http://".$_SERVER['SERVER_NAME'].":".$server_port;
+else :
+    $base_url = "http://".$_SERVER['SERVER_NAME'];
+endif;
 
 
 $GLOBALS['config_name'] = "NYPLdoc2";

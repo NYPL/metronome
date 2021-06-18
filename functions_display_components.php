@@ -161,13 +161,25 @@ function return_display_item_header($type, $temp_title, $record_id, $description
 
 
     $description = make_markdown($description);
-    $C_Primary_Func_Specs = make_markdown($C_Primary_Func_Specs);
-    $C_Primary_Accessibility = make_markdown($C_Primary_Accessibility);
+    
+    if ($C_Primary_Func_Specs) :
+        $C_Primary_Func_Specs = make_markdown($C_Primary_Func_Specs);
+    else :
+        $C_Primary_Func_Specs = "<em>Functional specifications are not yet available for this component.</em>";
+    endif;
+
+    if ($C_Primary_Accessibility) :
+        $C_Primary_Accessibility = make_markdown($C_Primary_Accessibility);
+    else :
+        $C_Primary_Accessibility = "<em>Accessibility specifications are not yet available for this component.</em>";
+    endif;
 
     // display status bar	
     $status_table = "<table class='status_bar'><tr>";
-    $status_table .= "<td><strong>React</strong>:" . $C_React_Storybook . " | " . $React_Code . "</td>";
-    $status_table .= "<td><strong>Twig</strong>: " . $C_Twig_Storybook . " | " . $C_Twig_Code . "</td>";
+    // $status_table .= "<td><strong>React</strong>:" . $C_React_Storybook . " | " . $React_Code . "</td>";
+    $status_table .= "<td><strong>React</strong>: " . $C_React_Storybook . "</td>";
+    // $status_table .= "<td><strong>Twig</strong>: " . $C_Twig_Storybook . " | " . $C_Twig_Code . "</td>";
+    $status_table .= "<td><strong>Twig</strong>: " . $C_Twig_Storybook . "</td>";
     $status_table .= "<td>&nbsp;</td>";
     $status_table .= "</tr></table>";
 
@@ -184,21 +196,21 @@ function return_display_item_header($type, $temp_title, $record_id, $description
     // link to edit parameters and details (not shown for template)
     $edit_all_para_and_details = "<a href='" . $GLOBALS['components_parameters_and_details_edit_link'] . $record_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
 
-    $header .= "<tr><td><h1 class='entry-title'>$temp_title </h1> $temp_edit_Link</td></tr>";
+    $header .= "<tr><td><h1 class='entry-title'>$temp_title </h1> <p>$temp_edit_Link</p></td></tr>";
     $header .= "<tr><td>$description</td></tr>";
     $header .= "<tr><td>$status_table</td></tr>";
     $header .= "<tr><td></td></tr>";
 
     $figmaLink = $figma;
     $figmaIframe = display_ia_design($figma);
-    $header .= "<tr><td><strong>Design & Schematic</strong>" . $figmaIframe . "<br><a href='" . $figma . "'>".$figma."</a><br><br><br></td></tr>";
+    $header .= "<tr><td><span class='section_header'>Design &amp; Schematic</span>" . $figmaIframe . "<br><span class='section_header'>Figma Link</span><br><a href='" . $figma . "'>".$figma."</a></td></tr>";
 
 
     if ($type == "Component") {
         $header .= "
-            <tr><td><span class='section_header'>Functional Specs</span><br>$C_Primary_Func_Specs</td></tr>
-            <tr><td><span class='section_header'>Accessibility</span><br>$C_Primary_Accessibility</td></tr>
-            <tr><td><span class='section_header'>CHANGELOG</span><br>$these_parameters</td></tr>";
+            <tr><td><hr><span class='section_header'>Functional Specs</span><br>$C_Primary_Func_Specs</td></tr>
+            <tr><td><hr><span class='section_header'>Accessibility</span><br>$C_Primary_Accessibility</td></tr>
+            <tr><td><hr><span class='section_header'>CHANGELOG</span>$these_parameters</td></tr>";
     }
 
     $header .= "</table>";
