@@ -7,295 +7,298 @@ Author URI: http://example.com
 Template: twentyfourteen
 Version: 1.0.0
 */
- 
+
 @import url("../twentyfourteen/style.css");
- 
+
 /* =Theme customization starts here
 -------------------------------------------------------- */
-
 
 /*** TWEAKS TO EXISTING ***/
 
 body {
-   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
-	
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu;
 }
 .primary-navigation .nav-menu {
-	display: none;
+  display: none;
 }
 .hentry {
-	margin: 20px;
-	max-width: 1672px;
-	max-width: none;
-	
+  margin: 20px;
+  max-width: 1672px;
+  max-width: none;
 }
-.main-content{
-	max-width: none;
-	
+.main-content {
+  max-width: none;
 }
 .site-content .entry-header,
 .site-content .entry-content,
 .site-content .entry-summary,
 .site-content .entry-meta,
 .page-content {
-	margin: 20px;
-	max-width: 1474px;
-	max-width: none;
+  margin: 20px;
+  max-width: 1474px;
+  max-width: none;
 }
 
-table, th, td {
-    border: 0px solid rgba(0, 0, 0, 0.1);
-	border: #FFFFFF;
+table,
+th,
+td {
+  border: 0px solid rgba(0, 0, 0, 0.1);
+  border: #ffffff;
 }
-
-
 
 .content-sidebar .wp-playlist-item .wp-playlist-caption {
-	color: #666666;
+  color: #666666;
 }
 #secondary {
-	background-color: #666;
+  background-color: #666;
 }
 .site-header {
-    background-color: #666;
-    xbackground-color: #990000;
+  background-color: #666;
+  xbackground-color: #990000;
 }
 
 .site-footer {
-	background-color: #666666;
+  background-color: #666666;
 }
 .featured-content {
-	background: #666666;
+  background: #666666;
 }
 
 h2 {
-    clear: both;
-    font-weight: 500;
+  clear: both;
+  font-weight: 500;
 }
 
-h4{
-	    margin: 12px 0 5px 0;
-    font-weight: 400;
-    xfont-size: 21px;
+h4 {
+  margin: 12px 0 5px 0;
+  font-weight: 400;
+  xfont-size: 21px;
 }
 
 p {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
-
 
 .site-content .entry-content {
-  margin: 0px; 
+  margin: 0px;
 }
 
-.entry-content td{    
-	padding: 8px;
-    padding-top: 0px;
+.entry-content td {
+  padding: 8px;
+  padding-top: 0px;
 }
 
 a {
-    color: #36747b;
+  color: #36747b;
 }
 a:hover {
-    color: #36747b;
+  color: #36747b;
+}
+
+nav.sub.separate span:not(:first-child)::before {
+  content: "|";
+  margin: 0 8px;
+}
+
+ul.gapped li:not(:first-child) {
+  margin-top: 16px;
 }
 
 /********* PLUGINS *********/
-.markdown{
-  margin: 0px; 
-  padding: 0px; 
-	
+.markdown {
+  margin: 0px;
+  padding: 0px;
 }
 .markdown p {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
-
-
 
 /********* ADD ONS *********/
-.cardwrapper{
-	margin:20px;
-	margin-left:0px;
-	margin-right:0px;
-	padding:20px;
-	border: 1px solid #666666;
+.cardwrapper {
+  margin: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 20px;
+  border: 1px solid #666666;
 }
 
-.status_bar{
-	background-color: #efefef;
-	border-bottom: 1px solid #000000;
-	border-top: 1px solid #000000;
+.status_bar {
+  background-color: #efefef;
+  border-bottom: 1px solid #000000;
+  border-top: 1px solid #000000;
 }
 /* keep line breaks */
-.themsthebreaks{
-	white-space: pre-wrap;
-	xfont-size:16px;
+.themsthebreaks {
+  white-space: pre-wrap;
+  xfont-size: 16px;
 }
 
-.align_right{
-	text-align:right;
+.align_right {
+  text-align: right;
 }
-
 
 /* Alert */
-.very_urgent_message{
-	font-style: italic;
-	xfont-size:30px;
+.very_urgent_message {
+  font-style: italic;
+  xfont-size: 30px;
 }
-.urgent_message{
-	color:#cc0000;
-	font-style: italic;
-	xfont-weight:700;
+.urgent_message {
+  color: #cc0000;
+  font-style: italic;
+  xfont-weight: 700;
 }
-.not_so_important{
-	color:#999999;
-	font-style: italic;
+.not_so_important {
+  color: #999999;
+  font-style: italic;
 }
 
 /* Component Number */
-.component_number{
-	background-color: #ffb81d;
-	color:#000000;
-	font-weight:700;
-font-size:111%;
-	padding:10px;
-	padding-top:3px;
-	padding-bottom:3px;
+.component_number {
+  background-color: #ffb81d;
+  color: #000000;
+  font-weight: 700;
+  font-size: 111%;
+  padding: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 /* Component Name */
-.placement_reason{
-	font-weight:700;
-font-size:111%;
-	padding:10px;
-	padding-top:3px;
-	padding-bottom:3px;
+.placement_reason {
+  font-weight: 700;
+  font-size: 111%;
+  padding: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 /* manual or auto */
-.manual_or_auto{
-	font-weight: 700;
-font-size:111%;
+.manual_or_auto {
+  font-weight: 700;
+  font-size: 111%;
 }
 
-
-
-
-.bottom_border{
- border-bottom: thin solid;
+.bottom_border {
+  border-bottom: thin solid;
 }
 
-.placement_details{
-background-color: #fff5e2;
- border-bottom: thin solid;
+.placement_details {
+  background-color: #fff5e2;
+  border-bottom: thin solid;
 }
-.bottom_border_thick{
- border-bottom: thick solid;
+.bottom_border_thick {
+  border-bottom: thick solid;
 }
 
-.top_border{
- border-top: thin solid;
+.top_border {
+  border-top: thin solid;
 }
 
 /* Attribute */
-.attribute_detail{
-	xbackground-color:#ffd84d;
-	font-weight:500;
-	xpadding:3px;
-	margin-top:3px;
-	border-bottom: thin solid #ffbb3f;
+.attribute_detail {
+  xbackground-color: #ffd84d;
+  font-weight: 500;
+  xpadding: 3px;
+  margin-top: 3px;
+  border-bottom: thin solid #ffbb3f;
 }
 
 /* optional */
-.optional{
-	background-color:#ECD0FC;
+.optional {
+  background-color: #ecd0fc;
 }
 
 /* Section Header */
-.section_header{
-	color:#000000;
-	font-weight:600;
+.section_header {
+  color: #000000;
+  font-weight: 600;
 }
 
 /* alert if I have open issues */
-.open_issue_alert{
-	font-weight: 700;
-	color:#ffffff;
-	background-color: #990000;
+.open_issue_alert {
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #990000;
 }
 
 /* used in shortcode style_to_status */
 /* for projects */
 
-.status_not_started, .status_definition, .status_build, .status_complete, .status_blocked, .status_paused, .status_canceled, .status_requirements, .status_in_progress, .status_na, .status_not_defined, .status_requirements{
-	margin:0px;
-	margin-top:2px;
-	padding:3px;
-	
+.status_not_started,
+.status_definition,
+.status_build,
+.status_complete,
+.status_blocked,
+.status_paused,
+.status_canceled,
+.status_requirements,
+.status_in_progress,
+.status_na,
+.status_not_defined,
+.status_requirements {
+  margin: 0px;
+  margin-top: 2px;
+  padding: 3px;
 }
 
-
-.status_not_started,.status_exploration,.status_definition,.status_in_progress,.status_complete,.status_blocked,.status_paused,.status_canceled,.status_requirements,.status_na,.status_not_defined{
-	font-size:14px;
-	
+.status_not_started,
+.status_exploration,
+.status_definition,
+.status_in_progress,
+.status_complete,
+.status_blocked,
+.status_paused,
+.status_canceled,
+.status_requirements,
+.status_na,
+.status_not_defined {
+  font-size: 14px;
 }
 
-
-.status_not_started{
-	background-color:#bde5e2;
+.status_not_started {
+  background-color: #bde5e2;
 }
-.status_exploration{
-	background-color:#00a3ad;
-}
-
-.status_definition{
-	background-color:#ffe5b5;
-}
-.status_in_progress{
-	background-color:#ffde59;
-}
-.status_complete{
-	background-color: #56BD56;	
-}
-.status_blocked{
-	background-color: #990000;	
-	
-}
-.status_paused{
-	background-color: #776e63;	
-	color:#ffffff;
-	
-}
-.status_canceled{
-	background-color: #000000;	
-	
-}
-.status_requirements{
-	
+.status_exploration {
+  background-color: #00a3ad;
 }
 
-.status_na{
-	background-color: #cccccc;	
-	
+.status_definition {
+  background-color: #ffe5b5;
+}
+.status_in_progress {
+  background-color: #ffde59;
+}
+.status_complete {
+  background-color: #56bd56;
+}
+.status_blocked {
+  background-color: #990000;
+}
+.status_paused {
+  background-color: #776e63;
+  color: #ffffff;
+}
+.status_canceled {
+  background-color: #000000;
+}
+.status_requirements {
 }
 
-.status_not_defined{
-	background-color: deeppink;
-	background-color: #DE848F;
-	
+.status_na {
+  background-color: #cccccc;
 }
 
+.status_not_defined {
+  background-color: deeppink;
+  background-color: #de848f;
+}
 
-.optional_item{
-	background-color: #d2f2fc;
-	
+.optional_item {
+  background-color: #d2f2fc;
 }
 
 /* resolved */
-.resolved_oi{
-	background-color:#efefef;
+.resolved_oi {
+  background-color: #efefef;
 }
-
-
-
-

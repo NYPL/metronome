@@ -92,11 +92,19 @@
                         foreach ($component_collection as $component) {
                             if (!empty($component["Placed Component"][0]["Component Name"])) {
                                 $component_name = $component["Placed Component"][0]["Component Name"];
+                                $component_description = $component["Placed Component"][0]["Component Description"];
                                 $component_slug = $component["Placed Component"][0]["Slug"];
+                                $component_figma = $component["Placed Component"][0]["Figma Embed Link"];
+                                $component_storybook = $component["Placed Component"][0]["Storybook Embed Link"];
+                                $component_patternlab = $component["Placed Component"][0]["PatternLab Embed Link"];
                                 $component_link = $GLOBALS['components_base_folder'] . $component_slug;
                                 $temp_component = array(
                                     "name" => $component_name,
-                                    "link" => $component_link
+                                    "description" => $component_description,
+                                    "link" => $component_link,
+                                    "figma" => $component_figma,
+                                    "storybook" => $component_storybook,
+                                    "patternlab" => $component_patternlab
                                 );
                                 // If I don't already exist in larger array, add me
                                 if (!array_key_exists($component_name, $all_components_raw)) {
@@ -108,11 +116,29 @@
                         sort($all_components_raw);
                         $components_list = "";
                         foreach ($all_components_raw as $component => $val) {
-                            $components_list .= "<li><h4><a href='" . $val["link"] . "'>" . $val["name"] . "</a></h4></li>";
+                            $components_list .= "<li>";
+                            $components_list .= "   <h4><a href='" . $val["link"] . "'>" . $val["name"] . "</a></h4>";
+                            $components_list .= "   " . $val["description"] . "<br />";
+                            $components_list .= "   <nav class='sub separate'>";
+
+                            if ($val["figma"]) :
+                                $components_list .= "       <span><a target='_blank' href='" . $val["figma"] . "'>Figma</a></span>";
+                            endif;
+
+                            if ($val["storybook"]) :
+                                $components_list .= "       <span><a target='_blank' href='" . $val["storybook"] . "'>Storybook</a></span>";
+                            endif;
+
+                            if ($val["patternlab"]) :
+                                $components_list .= "       <span><a target='_blank' href='" . $val["patternlab"] . "'>Pattern Lab</a></span>";
+                            endif;
+
+                            $components_list .= "   </nav>";
+                            $components_list .= "</li>";
                         }
 
                         // Create page
-                        echo $templates_header . "<ol>$templates_list</ol><h2>" . count($all_components_raw) . " Components Used</h2><ul>" . $components_list . "</ul>";
+                        echo $templates_header . "<ol>$templates_list</ol><h2>" . count($all_components_raw) . " Components Used</h2><ul class='gapped'>" . $components_list . "</ul>";
                         ?>
 
                     </div>
