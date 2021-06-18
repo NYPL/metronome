@@ -95,6 +95,9 @@ a {
 a:hover {
   color: #36747b;
 }
+a.icon i.fas {
+  margin-right: 4px;
+}
 
 nav.sub.separate span:not(:first-child)::before {
   content: "|";

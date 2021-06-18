@@ -191,7 +191,7 @@ function return_display_item_header($type, $temp_title, $record_id, $description
         $temp_edit_Link = $GLOBALS['templates_edit_link'];
     }
 
-    $temp_edit_Link = "<a href='" . $temp_edit_Link . $record_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "Edit </a>";
+    $temp_edit_Link = "<a href='" . $temp_edit_Link . $record_id . "?blocks=hide' class='icon' target='new'>" . $GLOBALS['icon_edit'] . "Edit </a>";
 
     // link to edit parameters and details (not shown for template)
     $edit_all_para_and_details = "<a href='" . $GLOBALS['components_parameters_and_details_edit_link'] . $record_id . "?blocks=hide' target='new'>" . $GLOBALS['icon_edit'] . "</a>";
