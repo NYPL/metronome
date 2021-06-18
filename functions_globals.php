@@ -6,7 +6,7 @@
 $server_port = $_SERVER['SERVER_PORT'];
 $server_name = $_SERVER['SERVER_NAME'];
 
-if ($server_port) :
+if ($server_port == 8888) :
     $base_url = "http://".$_SERVER['SERVER_NAME'].":".$server_port;
 else :
     $base_url = "http://".$_SERVER['SERVER_NAME'];
