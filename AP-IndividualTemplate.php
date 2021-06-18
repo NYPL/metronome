@@ -156,9 +156,9 @@
                             // display accessibility notes
 
                             $T_Accessibility_Notes = make_markdown($e["Accessibility Details"]);
-                            $code .= "<br><span class='section_header'>Accessibility</span>" . $T_Accessibility_Notes;
+                            $code .= "<br><hr><span class='section_header'>Accessibility</span>" . $T_Accessibility_Notes;
 
-                            $code .= "<br><strong>CHANGELOG:<br>" . make_markdown($T_changelog);
+                            $code .= "<br><hr><strong>CHANGELOG<br>" . make_markdown($T_changelog);
                         }
                     } else {
                         $code .=  "Template not found";
@@ -183,7 +183,7 @@
                     // Header for Components
                     $Num_Components = count($components);
                     $add_a_component_link = "<a href='https://airtable.com/shrUc3dtBvnhfavnN?prefill_Template=" . $T_Name . "' target=new>" . $GLOBALS['icon_add'] . "</a>";
-                    $code .= "<h3>" . $Num_Components . " Component(s) Used " . $add_a_component_link . "</h3>";
+                    $code .= "<hr><h3>" . $Num_Components . " Component(s) Used " . $add_a_component_link . "</h3>";
 
 
                     $base_folder_link = "/components/";
