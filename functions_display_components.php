@@ -203,7 +203,7 @@ function return_display_item_header($type, $temp_title, $record_id, $description
 
     $figmaLink = $figma;
     $figmaIframe = display_ia_design($figma);
-    $header .= "<tr><td><span class='section_header'>Design &amp; Schematic</span>" . $figmaIframe . "<br><span class='section_header'>Figma Link</span><br><a href='" . $figma . "'>".$figma."</a></td></tr>";
+    $header .= "<tr><td><span class='section_header'>Design &amp; Schematic</span>" . $figmaIframe . "<br><span class='section_header'>Figma Link</span><br><a href='" . $figma . "' target='_blank'>".$figma."</a></td></tr>";
 
 
     if ($type == "Component") {
